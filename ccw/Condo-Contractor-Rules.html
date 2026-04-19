@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Condo Contractor Rules — Continental House Unit 606</title>
+  <style>
+    :root {
+      --blue-dark:   #1F3864;
+      --blue-mid:    #2E5FA3;
+      --blue-light:  #D6E4F0;
+      --accent:      #C0392B;
+      --text:        #222;
+      --muted:       #555;
+      --border:      #C8D8E8;
+      --bg:          #F7FAFD;
+      --white:       #ffffff;
+      --max-width:   860px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Header ── */
+    .page-header {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 28px 20px 22px;
+      text-align: center;
+    }
+    .page-header .label {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #A8C4E0;
+      margin-bottom: 8px;
+    }
+    .page-header h1 {
+      font-size: 1.7rem;
+      font-weight: bold;
+      line-height: 1.3;
+    }
+    .page-header .subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #C0D8F0;
+      margin-top: 8px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    /* ── Section card ── */
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--blue-mid);
+      border-radius: 4px;
+      padding: 22px 24px;
+      margin-bottom: 22px;
+    }
+    .section h2 {
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--blue-light);
+    }
+    .section p {
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: #FEF9E7;
+      border: 1px solid #F0C040;
+      border-left: 5px solid #E6A817;
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-bottom: 22px;
+    }
+    .highlight h2 {
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #7D5A00;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #F0D88A;
+    }
+    .highlight p { margin-bottom: 10px; }
+    .highlight p:last-child { margin-bottom: 0; }
+
+    /* ── Practical rec box ── */
+    .rec-box {
+      background: #EBF5EB;
+      border: 1px solid #A8D5A8;
+      border-left: 5px solid #2E8B2E;
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-top: 14px;
+    }
+    .rec-box strong {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #1A5C1A;
+      margin-bottom: 8px;
+    }
+
+    /* ── Key rule pill ── */
+    .pill {
+      display: inline-block;
+      background: var(--blue-dark);
+      color: var(--white);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-right: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── References ── */
+    .references {
+      background: #F0F4F8;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 18px 22px;
+      margin-top: 30px;
+    }
+    .references h3 {
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .references ul {
+      list-style: none;
+      padding: 0;
+    }
+    .references ul li {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+    .references ul li:last-child { border-bottom: none; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #999;
+      padding: 24px 20px;
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 1.3rem; }
+      .section, .highlight, .rec-box { padding: 16px; }
+      .container { padding: 20px 14px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="label">Continental House Condominium · Unit 606</div>
+    <h1>Condo Contractor Rules</h1>
+    <div class="subtitle">How to bring contractors into the building &amp; what the HOA requires</div>
+  </div>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>Building Entry</h2>
+      <p>Workers must enter and exit only through the <strong>A-Deck garage entrance</strong>. They may never use the main lobby entrance.</p>
+      <p>The owner should let contractors into the building <em>"whenever possible"</em> — you cannot hand your fob or key to a contractor without Board approval.</p>
+    </div>
+
+    <div class="section">
+      <h2>Access Devices (Fobs / Keys)</h2>
+      <p>A contractor fob may only be issued at the <strong>Board's sole discretion</strong>, with a <strong>$500 refundable deposit</strong>. If security is compromised, the Board can demand immediate fob return.</p>
+      <p>Residents are prohibited from lending their own access devices to contractors — violations can result in fines and confiscation of the device.</p>
+    </div>
+
+    <div class="section">
+      <h2>If You Don't Have a Contractor Fob</h2>
+      <p>You'd need to be there (or send someone on your behalf) to let them in at 8 AM, since the main rule is that the owner lets contractors into the building <em>"whenever possible."</em></p>
+      <p>There's no language saying it has to be you specifically, so a trusted person standing in for you would likely satisfy that requirement.</p>
+    </div>
+
+    <div class="section">
+      <h2>Board Pre-Approval Required</h2>
+      <p>All construction and renovation work — including smaller improvements — must be pre-approved via the <strong>Residential Construction and Renovation Application</strong>.</p>
+      <p>This explicitly includes any work involving plumbing, electrical, vents, or structural members. For asbestos abatement specifically, file this application before work begins.</p>
+    </div>
+
+    <div class="section">
+      <h2>Insurance &amp; Licensing</h2>
+      <p>You must provide the Board with the contractor's:</p>
+      <p>
+        <span class="pill">1</span> Business license<br>
+        <span class="pill">2</span> Bond<br>
+        <span class="pill">3</span> Insurance certificate naming <strong>Continental House Condominium and CWD Group, Inc.</strong> as additional insured for no less than <strong>$1M / $2M aggregate</strong>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Work Hours</h2>
+      <p><strong>Monday – Friday, 8:00 AM – 5:00 PM only.</strong> Weekends and holidays (12 listed in the Rules) are prohibited. The Board can grant exceptions.</p>
+    </div>
+
+    <div class="section">
+      <h2>Materials &amp; Elevator</h2>
+      <p>All materials come in through <strong>A-Deck only</strong>, using the <strong>west (left) elevator</strong>. Elevator pads are required — coordinate with the CWD Move Coordinator to get them installed. Carpet protector sheeting must cover all common element flooring.</p>
+    </div>
+
+    <div class="section">
+      <h2>Parking</h2>
+      <p>Contractors park on the <strong>street only</strong>. Guest parking and garage decks are off-limits. Violations may result in towing at the owner's expense.</p>
+    </div>
+
+    <div class="section">
+      <h2>Owner Liability</h2>
+      <p>You are <strong>personally responsible</strong> for everything your contractors do, including fines for rule violations, security breaches, and any building damage they cause.</p>
+    </div>
+
+    <div class="highlight">
+      <h2>Better Solution — Request a Contractor Fob</h2>
+      <p>The Remodel Policy (Board Requirement #9) allows the Board to issue your General Contractor their own entry fob, with a <strong>$500 refundable deposit</strong>. If approved, the contractor can enter A-Deck independently each morning without you needing to be there. The deposit is refunded when the project completes, assuming no security issues.</p>
+
+      <div class="rec-box">
+        <strong>Practical Recommendation</strong>
+        <p>When you submit the Residential Construction and Renovation Application for the asbestos abatement, <strong>request the contractor fob at the same time</strong>. That way everything gets approved together and your abatement contractor can come and go through A-Deck on their own schedule — as long as they stay within the 8 AM–5 PM Monday–Friday window.</p>
+        <p style="margin-top:10px;">One thing worth confirming with CWD: whether asbestos abatement requires any special coordination beyond the standard application, since abatement work involves hazmat protocols and may trigger EPA/WISHA notification requirements that the building management would want to be aware of.</p>
+      </div>
+    </div>
+
+    <div class="references">
+      <h3>References</h3>
+      <ul>
+        <li>Mar 14 Docset From Paul / Rules &amp; Regulations.pdf / Sections 4 and 5 — General Rules, and Residential Construction, Repair and Maintenance (paragraphs 5.1–5.21)</li>
+        <li>Mar 14 Docset From Paul / Rules &amp; Regulations.pdf / Unit Remodel Policy (Board Requirements 1–12, pages 24–25)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    Continental House Condominium · Unit 606 · 100 Ward Street, Seattle WA 98109
+  </footer>
+
+</body>
+</html>

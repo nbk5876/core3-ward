@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Summary | Unit 606 Asbestos Disclosure</title>
+  <style>
+    :root {
+      --blue-dark: #1F3864;
+      --blue-mid: #2E4A7A;
+      --blue-light: #EEF2F7;
+      --row-alt: #F4F7FB;
+      --green-dark: #16622A;
+      --red-accent: #8B0000;
+      --divider: #CCCCCC;
+      --text: #111111;
+      --subtext: #666666;
+      --font: Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      font-size: 15px;
+      color: var(--text);
+      background: #f4f6f9;
+    }
+
+    .page-header {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,0.85);
+      font-size: 11px;
+      font-style: italic;
+      padding: 6px 20px;
+      letter-spacing: 0.03em;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 36px 40px 60px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    /* Title block */
+    .title-block {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .title-block h1 {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .title-block .subtitle {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 4px;
+    }
+    .title-block .meta {
+      font-size: 13px;
+      color: var(--subtext);
+      font-style: italic;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 20px 0;
+    }
+
+    /* Section headings */
+    h2.section-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--blue-dark);
+      border-bottom: 2px solid var(--blue-dark);
+      padding-bottom: 5px;
+      margin: 28px 0 14px;
+    }
+
+    /* Info table */
+    table.info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    table.info-table td {
+      padding: 8px 12px;
+      border: 1px solid var(--divider);
+      vertical-align: top;
+    }
+    table.info-table td.label {
+      font-weight: bold;
+      width: 30%;
+      background: var(--row-alt);
+      color: var(--blue-mid);
+    }
+    table.info-table tr:nth-child(even) td { background: var(--blue-light); }
+    table.info-table tr:nth-child(even) td.label { background: #dce6f2; }
+
+    /* Highlight box */
+    .highlight-box {
+      background: #fff8f8;
+      border-left: 5px solid var(--red-accent);
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .highlight-box strong { color: var(--red-accent); }
+
+    /* Quote block */
+    .quote-block {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue-mid);
+      padding: 12px 18px;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 12px 0;
+      color: #333;
+    }
+
+    /* Body text */
+    p.body-text {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    /* Bullet list */
+    ul.doc-list {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0;
+    }
+    ul.doc-list li {
+      font-size: 13.5px;
+      line-height: 1.6;
+      padding: 5px 0 5px 20px;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    ul.doc-list li:before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: var(--blue-mid);
+      font-size: 16px;
+    }
+    ul.doc-list li strong { color: var(--blue-dark); }
+
+    ul.question-list {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0;
+      counter-reset: q;
+    }
+    ul.question-list li {
+      font-size: 13.5px;
+      line-height: 1.6;
+      padding: 6px 0 6px 26px;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+      counter-increment: q;
+    }
+    ul.question-list li:before {
+      content: counter(q) ".";
+      position: absolute;
+      left: 4px;
+      font-weight: bold;
+      color: var(--blue-mid);
+    }
+
+    /* Page footer */
+    .page-footer {
+      text-align: center;
+      font-size: 11px;
+      color: var(--subtext);
+      border-top: 1px solid var(--divider);
+      padding-top: 14px;
+      margin-top: 40px;
+    }
+
+    /* Attorney cards */
+    .attorney-card {
+      background: var(--row-alt);
+      border: 1px solid var(--divider);
+      border-radius: 4px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      font-size: 13.5px;
+      line-height: 1.7;
+    }
+    .attorney-card strong { color: var(--blue-dark); font-size: 14px; }
+    .attorney-card a { color: var(--blue-mid); }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .container { padding: 20px 16px 40px; }
+      .title-block h1 { font-size: 18px; }
+      table.info-table td.label { width: 38%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-header">CONFIDENTIAL — ATTORNEY-CLIENT COMMUNICATION</div>
+
+<div class="container">
+
+  <div class="title-block">
+    <h1>Case Summary — Seller Disclosure Misrepresentation</h1>
+    <div class="subtitle">100 Ward Street, Unit 606 &nbsp;|&nbsp; Seattle, WA 98109</div>
+    <div class="meta">Prepared for Attorney Review &nbsp;|&nbsp; April 2026</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Section 1 -->
+  <h2 class="section-title">1. Parties</h2>
+  <table class="info-table">
+    <tr><td class="label">Buyers</td><td>Irene Ferrante and Anthony (Tony) Byorick, a married couple</td></tr>
+    <tr><td class="label">Seller</td><td>Elad Ben-Yosef</td></tr>
+    <tr><td class="label">Property</td><td>100 Ward Street, Unit 606, Seattle, WA 98109</td></tr>
+    <tr><td class="label">Purchase Price</td><td>$890,000</td></tr>
+    <tr><td class="label">Buyer Broker</td><td>Paul Bettinson, Redfin (MLS# 96646)</td></tr>
+    <tr><td class="label">Listing Broker</td><td>Amnon Bruck, Realogics Sotheby's Int'l Realty</td></tr>
+    <tr><td class="label">Buyer Contact</td><td>Tony Byorick &nbsp;|&nbsp; tbbryan76@gmail.com &nbsp;|&nbsp; 206-612-7706</td></tr>
+  </table>
+
+  <hr class="divider">
+
+  <!-- Section 2 -->
+  <h2 class="section-title">2. Transaction Timeline</h2>
+  <table class="info-table">
+    <tr><td class="label">02/23/2026</td><td>Seller Elad Ben-Yosef signs and dates <strong>Form 17 Seller Disclosure Statement</strong></td></tr>
+    <tr><td class="label">03/12/2026</td><td>Mutual acceptance of Condominium PSA (Form 28)</td></tr>
+    <tr><td class="label">03/13/2026</td><td>Buyer signs <strong>Inspection Waiver Addendum (Form 35W)</strong> — Pre-Inspection box checked</td></tr>
+    <tr><td class="label">03/15/2026</td><td>Seller's counteroffer accepted; purchase price confirmed at $890,000</td></tr>
+    <tr><td class="label">04/11/2026</td><td>Pre-closing visit to unit; photos taken showing <strong>textured popcorn ceilings</strong> throughout; contractor walkthrough occurs</td></tr>
+    <tr><td class="label">04/23/2026</td><td>Closing date (confirmed via ALTA Settlement Statement)</td></tr>
+    <tr><td class="label">Post-closing</td><td>Asbestos-containing material (ACM) confirmed in bedroom ceilings of Unit 606</td></tr>
+    <tr><td class="label">April 2026</td><td>Buyers begin renovation planning; abatement documented as required prerequisite</td></tr>
+    <tr><td class="label">April 15, 2026</td><td>Source of asbestos knowledge confirmed: <strong>"The Continental House — Questions &amp; Answers"</strong> document, provided by property manager Teresa Brown (CWD Group, 206-706-8000), was attached as page 7 of the Seller's Disclosure Statement signed by Ben-Yosef on 03/15/2026. The Q&amp;A explicitly states: <em>"The popcorn ceilings have trace amounts of asbestos, less than 5%."</em> It further confirms that units which have been remodeled used an abatement company.</td></tr>
+  </table>
+
+  <hr class="divider">
+
+  <!-- Section 3 -->
+  <h2 class="section-title">3. The Core Issue</h2>
+
+  <p class="body-text">Continental House is an 8-story, 42-unit condominium building constructed in <strong>1970</strong> at 100 Ward Street, Seattle. After closing on Unit 606, the Buyers discovered that the bedroom ceilings contain asbestos-containing material (ACM) — a known hazardous material commonly found in buildings of this era as textured "popcorn" ceiling coatings.</p>
+
+  <p class="body-text">The Seller completed Form 17 on <strong>02/23/2026</strong> — more than two weeks before mutual acceptance. The Seller's own disclosure package included an attachment titled <strong>"The Continental House — Questions &amp; Answers,"</strong> a document prepared by property manager Teresa Brown of CWD Group. That document contains the following verbatim exchange:</p>
+
+  <div class="quote-block">
+    <strong>Q: Is there asbestos present in the popcorn ceilings?</strong><br>
+    <strong>A: The popcorn ceilings have trace amounts of asbestos, less than 5%.</strong><br><br>
+    <strong>Q: How have popcorn ceilings been handled in units that were remodeled?</strong><br>
+    <strong>A: The remodels have used an abatement company.</strong>
+  </div>
+
+  <p class="body-text">This document was part of the disclosure package the Seller himself signed and delivered. Additionally, the Seller is believed to have purchased Unit 606 approximately five years prior (circa 2020–2021), meaning this same Q&amp;A — or a substantially identical version — would very likely have been part of <em>his own</em> disclosure package at the time of his purchase. If so, the Seller had knowledge of the asbestos condition from the moment he acquired the unit. Section 7E of Form 17 asks explicitly:</p>
+
+  <p class="body-text">Section 7E asks explicitly:</p>
+
+  <div class="quote-block">
+    "Are there any substances, materials, or products in or on the property that may be environmental concerns, such as <strong>asbestos</strong>, formaldehyde, radon gas, lead-based paint, fuel or chemical storage tanks, or contaminated soil or water?"
+  </div>
+
+  <div class="highlight-box">
+    <strong>The Seller checked "NO" to this question.</strong><br><br>
+    Asbestos-containing material was subsequently confirmed in the bedroom ceilings of Unit 606. The Buyers now face significant abatement costs as a prerequisite to any renovation work — including hardwood flooring installation which requires HOA Board approval under a separate process.
+  </div>
+
+  <p class="body-text">Notably, even the PSA's buyer disclosure waiver states that buyers <strong>may not waive</strong> receipt of the Environmental section of Form 17 if the answer would be "yes" — meaning this section carries heightened legal weight regardless of the inspection waiver signed.</p>
+
+  <hr class="divider">
+
+  <!-- Section 4 -->
+  <h2 class="section-title">4. Key Legal Questions</h2>
+  <p class="body-text">The Buyers are not necessarily seeking litigation, but wish to understand their legal position. The central questions are:</p>
+  <ul class="question-list">
+    <li>Did the Seller have <strong>actual knowledge</strong> of asbestos in Unit 606 at the time he completed Form 17 on 02/23/2026?</li>
+    <li>Does the Seller's "NO" answer to Section 7E constitute <strong>negligent or intentional misrepresentation</strong> under RCW 64.06?</li>
+    <li>Does the <strong>Inspection Waiver (Form 35W)</strong> affect the Buyers' ability to bring a claim, given the PSA's carve-out for Environmental disclosures?</li>
+    <li>What <strong>damages</strong> could the Buyers potentially recover — e.g., cost of abatement, diminution in value, attorney's fees?</li>
+    <li>What is the <strong>statute of limitations</strong> under RCW 64.06 and applicable common law misrepresentation claims?</li>
+  </ul>
+
+  <hr class="divider">
+
+  <!-- Section 5 -->
+  <h2 class="section-title">5. Key Documents Available for Review</h2>
+  <ul class="doc-list">
+    <li><strong>Form 17 Seller Disclosure Statement</strong> (signed by Seller 02/23/2026) — Section 7E "NO" to asbestos</li>
+    <li><strong>Condominium Purchase and Sale Agreement (Form 28)</strong> — dated 03/12/2026</li>
+    <li><strong>Inspection Waiver Addendum (Form 35W)</strong> — Pre-Inspection box checked, signed 03/13/2026</li>
+    <li><strong>Counteroffer Addendum (Form 36)</strong> — purchase price $890,000, accepted 03/15/2026</li>
+    <li><strong>Pre-closing unit photos (April 11, 2026)</strong> — clearly show textured popcorn ceilings throughout the unit</li>
+    <li><strong>HOA Rules &amp; Regulations</strong> — Hard Surface Flooring Policy and Asbestos Abatement approval requirements</li>
+    <li><strong>Board Meeting Minutes (last 2 years)</strong> — no mention of asbestos anywhere in the building (43 pages reviewed)</li>
+    <li><strong>Kent Engineering Plumbing Assessment (Jan 2024)</strong> — confirms building constructed 1970; Phase 2 recommended</li>
+    <li><strong>Reserve Study (2025)</strong> — full building financial and capital assessment</li>
+    <li><strong>Buyers' Unit 606 Project Plan</strong> — documents abatement need in both bedrooms (created post-closing, April 2026)</li>
+    <li><strong>Continental House Declaration and Bylaws</strong></li>
+    <li><strong>ALTA Settlement Statement</strong> — confirms closing date April 23, 2026</li>
+  </ul>
+
+  <hr class="divider">
+
+  <!-- Section 6 -->
+  <h2 class="section-title">6. What We Do Not Yet Have</h2>
+  <p class="body-text">The following items may be critical to establishing the Seller's prior knowledge and are being investigated:</p>
+  <ul class="doc-list">
+    <li><strong>Formal asbestos lab test or industrial hygienist report</strong> confirming ACM in Unit 606 — date and commissioning party unknown; this is the single most important missing document</li>
+    <li><strong>Building permit history for Unit 606</strong> — showing any prior ceiling work during Seller's ownership</li>
+    <li><strong>Contractor communications or work orders</strong> related to ceilings in Unit 606</li>
+    <li><strong>Seller's own purchase disclosure documents (circa 2020–2021)</strong> — if obtainable, these would likely show the same Continental House Q&amp;A confirming asbestos was provided to the Seller when he bought the unit, directly establishing prior knowledge</li>
+    <li><strong>Answer to: "What updates did Elad do to the unit?"</strong> — asked of buyer's broker but not yet answered</li>
+  </ul>
+
+  <hr class="divider">
+
+  <!-- Section 7 -->
+  <h2 class="section-title">7. Additional Context</h2>
+  <p class="body-text">The Buyers' immediate goal is to move into Unit 606 as their primary residence. They are planning a renovation including hardwood flooring installation throughout, bathroom retiling, and kitchen updates. The asbestos abatement in both bedrooms is a required prerequisite before any of this work can proceed, and also requires separate HOA Board approval under the Continental House Rules and Regulations (Large Project category).</p>
+  <p class="body-text">The Buyers are <strong>not seeking to unwind the transaction</strong>. Their primary concern is understanding whether the Seller bears financial responsibility for some or all of the abatement costs, given his signed disclosure that no environmental hazards — including asbestos — were present in the unit.</p>
+
+  <hr class="divider">
+
+  <!-- Section 8: Attorney Consultation -->
+  <h2 class="section-title">8. Attorney Consultation — Outcome</h2>
+
+  <div class="highlight-box">
+    <strong>April 15, 2026 — Craig Blackmon consulted (seattlepropertylawyer.com | (206) 369-5949)</strong><br><br>
+    Craig Blackmon reviewed the facts and advised that the Buyers <strong>do not have a viable claim</strong>. His reasoning: under Washington law, buyers have a 5-day review period after receiving the Seller Disclosure Statement. The Continental House Q&amp;A — which explicitly confirms trace asbestos in the popcorn ceilings — was included in that same disclosure package. The Buyers had the opportunity to review it, ask questions, or rescind during that window. Not acting on the information within the review period is considered a failure of due diligence on the buyer's side, regardless of the internal contradiction between the Q&amp;A and the Seller's "NO" answer on Form 17 Section 7E.<br><br>
+    <strong>Conclusion:</strong> Matter closed. No further legal action planned. The asbestos abatement cost will be treated as a renovation expense.
+  </div>
+
+  <div class="attorney-card">
+    <strong>Craig Blackmon — Seattle Property Lawyer</strong><br>
+    <a href="https://seattlepropertylawyer.com">seattlepropertylawyer.com</a> &nbsp;|&nbsp; (206) 369-5949 &nbsp;|&nbsp; craig@seattlepropertylawyer.com<br>
+    <em>Consulted April 15, 2026. Advised no viable claim exists given the 5-day review period and buyer due diligence standard under Washington law.</em>
+  </div>
+
+  <hr class="divider">
+
+  <p class="body-text" style="font-style:italic; color: var(--subtext); font-size:13px;">
+    Prepared by Tony Byorick &nbsp;|&nbsp; tbbryan76@gmail.com &nbsp;|&nbsp; April 2026<br>
+    All referenced documents are available for attorney review upon request.
+  </p>
+
+  <div class="page-footer">
+    Byorick/Ferrante v. Ben-Yosef &nbsp;|&nbsp; 100 Ward St Unit 606, Seattle WA &nbsp;|&nbsp; CONFIDENTIAL — ATTORNEY-CLIENT COMMUNICATION
+  </div>
+
+</div>
+</body>
+</html>

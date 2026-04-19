@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Transcript | 100 Ward St Unit 606</title>
+  <style>
+    :root {
+      --blue-dark: #1F3864;
+      --blue-mid: #2E4A7A;
+      --blue-light: #EEF2F7;
+      --green-dark: #16622A;
+      --red-accent: #8B0000;
+      --divider: #CCCCCC;
+      --text: #111111;
+      --subtext: #666666;
+      --font: Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      font-size: 15px;
+      color: var(--text);
+      background: #f4f6f9;
+      padding: 0;
+    }
+
+    /* Page header bar */
+    .page-header {
+      background: var(--blue-dark);
+      color: #fff;
+      font-size: 11px;
+      font-style: italic;
+      padding: 6px 20px;
+      letter-spacing: 0.03em;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 36px 40px 60px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    /* Title block */
+    .title-block {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .title-block h1 {
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--blue-dark);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .title-block .subtitle {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 4px;
+    }
+    .title-block .meta {
+      font-size: 13px;
+      color: var(--subtext);
+      font-style: italic;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 20px 0;
+    }
+
+    /* TOC */
+    .toc-section {
+      margin-bottom: 28px;
+    }
+    .toc-section h2 {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--blue-dark);
+      margin-bottom: 6px;
+    }
+    .toc-note {
+      font-size: 12px;
+      font-style: italic;
+      color: var(--subtext);
+      margin-bottom: 10px;
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+    }
+    .toc-list li {
+      padding: 5px 0 5px 16px;
+      font-size: 14px;
+    }
+    .toc-list li a {
+      color: var(--blue-dark);
+      text-decoration: underline;
+    }
+    .toc-list li a:hover { color: var(--blue-mid); }
+    .toc-list li span.num {
+      font-weight: bold;
+      color: #444;
+      margin-right: 6px;
+    }
+
+    /* Transcript section */
+    .transcript-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin: 24px 0 10px;
+    }
+
+    /* Section marker */
+    .section-marker {
+      background: #fff8f8;
+      border-left: 4px solid var(--red-accent);
+      padding: 8px 14px;
+      margin: 24px 0 6px;
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--red-accent);
+    }
+
+    /* Message blocks */
+    .msg-block {
+      margin-bottom: 6px;
+    }
+    .msg-label {
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      margin-top: 18px;
+    }
+    .msg-label.tony { color: var(--blue-dark); }
+    .msg-label.claude { color: var(--green-dark); }
+
+    .msg-text {
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 10px 14px;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+    .msg-text.tony-msg {
+      background: var(--blue-light);
+      color: var(--text);
+    }
+    .msg-text.claude-msg {
+      background: #fff;
+      color: var(--text);
+      border-left: 3px solid #d0e4d0;
+    }
+    .msg-text p { margin-bottom: 8px; }
+    .msg-text p:last-child { margin-bottom: 0; }
+
+    /* Page footer */
+    .page-footer {
+      text-align: center;
+      font-size: 11px;
+      color: var(--subtext);
+      border-top: 1px solid var(--divider);
+      padding-top: 14px;
+      margin-top: 40px;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .container { padding: 20px 16px 40px; }
+      .title-block h1 { font-size: 20px; }
+      .msg-text { font-size: 13px; margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-header">SESSION TRANSCRIPT &nbsp;|&nbsp; 100 Ward St Unit 606 &nbsp;|&nbsp; April 15, 2026</div>
+
+<div class="container">
+
+  <div class="title-block">
+    <h1>Session Transcript</h1>
+    <div class="subtitle">100 Ward Street Unit 606 — Project Setup &amp; Asbestos Disclosure Research</div>
+    <div class="meta">April 15, 2026 &nbsp;|&nbsp; Tony Byorick &amp; Claude (Anthropic)</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TOC -->
+  <div class="toc-section">
+    <h2>KEY LEGAL INSIGHTS — TABLE OF CONTENTS</h2>
+    <div class="toc-note">Click any entry to jump to that section of the transcript.</div>
+    <ul class="toc-list">
+      <li><span class="num">1.</span><a href="#toc1">No Asbestos Policy Found in Governing Documents</a></li>
+      <li><span class="num">2.</span><a href="#toc2">1970 Building — Plumbing Report Flags Aging Infrastructure</a></li>
+      <li><span class="num">3.</span><a href="#toc3">Unit 606 Purchased — Asbestos Discovered Post-Closing</a></li>
+      <li><span class="num">4.</span><a href="#toc4">Form 17 Section 7E — Seller Checked "NO" to Asbestos (Key Finding)</a></li>
+      <li><span class="num">5.</span><a href="#toc5">Board Minutes Search — No Asbestos Mentioned in 2 Years</a></li>
+      <li><span class="num">6.</span><a href="#toc6">Full Document Search — Only 3 Asbestos References Found</a></li>
+      <li><span class="num">7.</span><a href="#toc7">Legal Standing — RCW 64.06 &amp; Seattle Attorney Recommendations</a></li>
+      <li><span class="num">8.</span><a href="#toc8">Source of Asbestos Knowledge Confirmed — Continental House Q&amp;A (Key Finding)</a></li>
+      <li><span class="num">9.</span><a href="#toc9">Craig Blackmon Consulted — No Viable Claim (Matter Closed)</a></li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+  <div class="transcript-heading">FULL SESSION TRANSCRIPT</div>
+  <hr class="divider">
+
+  <!-- Exchange 1 -->
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">As part of project setup I want to point you toward the folders with relevant files that you will need to access. How do we do that?</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>Great question! There are a couple of ways to do this:</p>
+    <p><strong>Option 1: Use the folder picker (easiest)</strong> — I can open a native folder picker so you can select the folder directly.</p>
+    <p><strong>Option 2: Tell me the path</strong> — If you know the full path to the folder (e.g., C:\Users\Tony\Documents\MyProject), just share it and I can request access to that specific location.</p>
+    <p>Once a folder is mounted, I can read files from it, create new files, and save outputs directly there — and it persists between sessions. You currently have one folder connected — Ward St. Would you like to add another folder or point me to a specific subfolder?</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">whats the path of Ward St.?</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>The folder appears to be empty right now. I can see it internally as the mounted workspace, but I don't have visibility into the exact Windows path on your computer.</p>
+    <p>The easiest way to find it: look at what folder you selected when you set up Cowork — it would have been a folder named "Ward St" somewhere on your machine.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">"C:\Users\gb105\OneDrive\Documents\Home Buy 100 Ward St\Mar 14 Docset From Paul"</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>Got it, mounted! The folder is connected and contains 14 documents — a home purchase document set including financials, bylaws, inspection report, reserve study, rules &amp; regulations, and more. All 11 PDFs are unencrypted and readable. The property appears to be a unit at <strong>Continental House Condominium Association</strong> in Seattle/Tukwila, WA.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TOC Anchor 1 -->
+  <div class="section-marker" id="toc1">&#9658;&nbsp; 1. No Asbestos Policy Found in Governing Documents</div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">Is there anything that relates to the move in process or the process to govern installation of hardwood floors or abatement of asbestos in ceilings?</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p><strong>Move-In Process</strong> (Rules &amp; Regulations, p.20): $700 move-in fee. At least 5 business days advance notice required. Moves allowed Mon–Fri 9AM–4PM, Saturday 10AM–4PM — no Sundays. Unscheduled move incurs a $600 fine.</p>
+    <p><strong>Hard Surface / Hardwood Flooring</strong> (Rules &amp; Regulations, pp.21–25): Board approval required before any work begins. Must meet noise reduction standards (FIIC Rating of 62 for new installations). Deposit of $1,000 minimum required upfront. Post-installation acoustic testing required — approved vendor Sparling (206-667-0555).</p>
+    <p><strong>Asbestos / Ceiling Abatement — No dedicated policy found.</strong> The word "asbestos" does not appear anywhere in the document set. Given the building was built in 1970, this is worth asking the board or management company about directly before doing any ceiling work.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TOC Anchor 2 -->
+  <div class="section-marker" id="toc2">&#9658;&nbsp; 2. 1970 Building — Plumbing Report Flags Aging Infrastructure</div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">pull the full text of Inspection Report</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>The Inspection Report is a <strong>plumbing assessment only</strong> (Phase 1, dated January 2024), prepared by Kent Engineering. No mention of asbestos, ceilings, or structural elements.</p>
+    <p><strong>Key findings:</strong> All 4 inspected units missing dishwasher airgaps (code violation). Hammer arrestors absent throughout (code violation). Visible external corrosion on cast-iron waste pipes and copper supply pipes. The building's gas boiler and 1,500-gallon water heater will need to be replaced with all-electric systems. Engineers recommended Phase 2 pipe extractions and lab analysis.</p>
+    <p><strong>Bottom line on asbestos:</strong> This report says nothing about it. Given the building was built in <strong>1970</strong>, asbestos in ceiling texture (popcorn ceilings) is a real possibility — worth asking the HOA or a licensed inspector about directly before doing any ceiling work.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TOC Anchor 3 -->
+  <div class="section-marker" id="toc3">&#9658;&nbsp; 3. Unit 606 Purchased — Asbestos Discovered Post-Closing</div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">So, we bought unit 606. After the sale it was revealed that the bedrooms ceilings contained asbestos. Can we add another folder to the working folders?</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>That's a significant discovery — asbestos in the bedroom ceilings after closing is exactly the kind of thing that should have been disclosed.</p>
+    <p>The Inspection Waiver (Form 35W) is the critical document. You signed it on 3/12/2026, waiving the right to a property inspection — explicitly waiving "an inspection of the Property for hazardous materials." The Pre-Inspection Conducted checkbox was selected.</p>
+    <p>The core question: did the seller know about the asbestos and fail to disclose it? That's what we need to determine from the Seller's Disclosure Statement (Form 17).</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TOC Anchor 4 -->
+  <div class="section-marker" id="toc4">&#9658;&nbsp; 4. Form 17 Section 7E — Seller Checked "NO" to Asbestos (Key Finding)</div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">I have a folder with a subfolder that contains copy/paste png files: "C:\Users\gb105\OneDrive\shr1\100 Ward St\Claude Contrract Review Notes"</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p><strong>KEY FINDING:</strong> Form 17 Section 7E asks directly:</p>
+    <p><em>"Are there any substances, materials, or products in or on the property that may be environmental concerns, such as <strong>asbestos</strong>, formaldehyde, radon gas, lead-based paint, fuel or chemical storage tanks, or contaminated soil or water?"</em></p>
+    <p>The seller, <strong>Elad Ben-Yosef, checked NO</strong> and initialed the page <strong>EB on 02/23/2026</strong> — over three weeks before your mutual acceptance on 3/12/2026.</p>
+    <p>Washington State law (RCW 64.06) requires sellers to disclose known material defects, and asbestos is explicitly named in the question he answered "No" to. Critically, even the disclosure waiver in the PSA states that buyers <strong>cannot waive</strong> the Environmental section if the answer would be "Yes" — meaning this section carries extra legal weight.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TOC Anchor 5 -->
+  <div class="section-marker" id="toc5">&#9658;&nbsp; 5. Board Minutes Search — No Asbestos Mentioned in 2 Years</div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">yes search the Board Minutes from the last 2 years for any references to asbestos</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p><strong>Asbestos is never mentioned once</strong> across all 43 pages of board minutes covering the last two years. No discussion of ACM, abatement, popcorn ceilings, or any environmental remediation anywhere in the building.</p>
+    <p>This doesn't necessarily let the seller off the hook — the question is what <em>he personally</em> knew about <em>his unit specifically</em>, not what the full board knew. The Greenbusch Group testing proposal and the timeline of when asbestos was first formally identified remain the key threads to pull on.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TOC Anchor 6 -->
+  <div class="section-marker" id="toc6">&#9658;&nbsp; 6. Full Document Search — Only 3 Asbestos References Found</div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">Using Agent Ransack, I have done searches for \basbestos\b across all three folder paths and while there were hits, I'm not sure they are relevant or additions to what you already have seen.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>I ran the same search across all mounted folders. Only <strong>3 files contain asbestos mentions</strong>:</p>
+    <p><strong>1. Ward St Floor Plan Notes v2.pdf</strong> — Your own Project Plan for Unit 606 explicitly lists: "Remove and abate asbestos popcorn ceiling in bedrooms 1 and 2." File created April 9–13, 2026 — post-closing.</p>
+    <p><strong>2. Tonys Notes/Claude Notes.docx</strong> — Your renovation application draft already reviewed, including Project 2: Asbestos Abatement — Bedroom Ceilings.</p>
+    <p><strong>3. 100_Ward_St_606-Sellers_Counter.pdf</strong> — The Form 17 question text already analyzed (Section 7E).</p>
+    <p>The formal asbestos test report confirming ACM in Unit 606 has not been located in any folder. This is the single most important document for establishing your legal position.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TOC Anchor 7 -->
+  <div class="section-marker" id="toc7">&#9658;&nbsp; 7. Legal Standing — RCW 64.06 &amp; Seattle Attorney Recommendations</div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">My feeling is that it wouldn't hurt to start looking at lawyers who could help us with this... I dont want to sue but just want to know where we stand because we are looking into moving into unit 606 on Ward St.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>That's a smart and measured approach. Under <strong>RCW 64.06</strong>, the seller is only liable if they had <em>actual knowledge</em> of the defect. The hard part is proving what they knew.</p>
+    <p><strong>Recommended attorneys:</strong></p>
+    <p><strong>Craig Blackmon — Seattle Property Lawyer</strong><br>
+    <a href="https://seattlepropertylawyer.com">seattlepropertylawyer.com</a> | (206) 369-5949 | craig@seattlepropertylawyer.com<br>
+    He has a blog post explaining Form 17 — signals he handles exactly these kinds of disclosure disputes.</p>
+    <p><strong>Dickson Frohlich Phillips Burgess</strong><br>
+    <a href="https://www.dicksonlegal.com/misrepresentation-attorneys/">dicksonlegal.com</a> | (206) 621-1110</p>
+    <p><strong>Reed Long Year Law</strong><br>
+    <a href="https://reedlongyearlaw.com/blog/buyer-beware-deterioration-seller-misrepresentation-claims-washington/">reedlongyearlaw.com</a> — has written specifically about seller misrepresentation claims in Washington.</p>
+    <p>Key thing to establish with Irene: did anyone — a contractor, a neighbor, a previous owner — ever tell the seller about the asbestos before he signed Form 17 on 02/23/2026?</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">I went to https://seattlepropertylawyer.com/ - Craig looks good. I believe I will contact him to see how he works and how much he would cost.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">That sounds like a great first step. Craig Blackmon appears to be a strong fit — he clearly knows Form 17 inside and out, and his practice is focused specifically on residential real estate in Seattle. When you reach out, having a concise case summary ready will make the initial consultation much more efficient and could save billable time.</div>
+
+  <hr class="divider">
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">Yes put together a brief case summary document.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">Case summary created and saved as <strong>Case_Summary_Unit606_Asbestos.docx</strong> in your 100 Ward St folder. It covers: parties &amp; transaction details, full timeline, the core issue (Section 7E "NO" answer), key legal questions framed around RCW 64.06, documents you have, what's still missing, and your goal of understanding liability for abatement costs — not unwinding the transaction.</div>
+
+  <hr class="divider">
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">I can see it in Word. I would also like to get a word for word transcript of this current session saved into a word doc in the same folder.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">Full session transcript saved as <strong>Session_Transcript_Unit606.docx</strong> in your 100 Ward St folder, with a clickable Table of Contents linking to 7 key legal insight moments throughout the conversation.</div>
+
+  <hr class="divider">
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">Yes, looks like we need to find a ref to where and how we first learned of asbestos in the unit.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>After a comprehensive search of all documents across all folders, the formal asbestos test report was not located. However, a significant finding emerged from the <strong>Paul Kitchen Photos</strong> (taken April 11, 2026 — 12 days before closing on April 23):</p>
+    <p>Multiple photos clearly show a <strong>textured popcorn ceiling</strong> throughout the unit — the material type associated with asbestos in 1970s construction. Additionally, your questions.docx states: <em>"We met with our contractor today about the most salient issues with 100 Ward St. and he would like 2 weeks."</em></p>
+    <p><strong>Key questions to answer with Irene before the attorney call:</strong></p>
+    <p>— When exactly did you meet with the contractor — before or after closing April 23?<br>
+    — Did the contractor specifically mention asbestos, or just flag the popcorn ceiling?<br>
+    — Was Paul Bettinson (your broker) present when the ceiling was first discussed?<br>
+    — Did you ever get an answer to your question: "What updates did Elad do to the unit?"</p>
+    <p>The contractor is likely your key witness for establishing when and how asbestos was first identified. Craig Blackmon will almost certainly ask about this first.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- New session — April 15, 2026 continued -->
+  <div class="section-marker" id="toc8">&#9658;&nbsp; 8. Source of Asbestos Knowledge Confirmed — Continental House Q&amp;A</div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">I found out how we learned of the asbestos at 100 Ward.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg"><p>Great — what was the source?</p></div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">It was in a document that may have been named: Continental House - Questions &amp; Answers.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg"><p>Understood — searching the disclosure documents for that file now.</p></div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">We have added the Disclosure Agreement to the share folders. It contains the reference to the popcorn ceilings and has the asbestos question. The file is here: "C:\Users\gb105\OneDrive\shr1\4012 Paul Stuff\seller disclosure statement w form 17.pdf" — I printed the pdf to a new pdf located in the above file path.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p><strong>SOURCE CONFIRMED.</strong> The document was located and OCR-extracted. Page 7 of the Seller Disclosure Statement — signed by Elad Ben-Yosef on 03/15/2026 — contains an attachment titled <strong>"The Continental House — Questions &amp; Answers"</strong> provided by the property manager. It includes the following verbatim exchange:</p>
+    <p><em><strong>Q: Is there asbestos present in the popcorn ceilings?</strong><br>
+    A: The popcorn ceilings have trace amounts of asbestos, less than 5%.</em></p>
+    <p><em><strong>Q: How have popcorn ceilings been handled in units that were remodeled?</strong><br>
+    A: The remodels have used an abatement company.</em></p>
+    <p>This is a clear, written disclosure from the property manager — attached to and signed as part of the Seller's own disclosure package — confirming asbestos in the building's popcorn ceilings. The Seller signed and delivered this document, yet checked "NO" on Form 17 Section 7E. That is a direct contradiction within the same disclosure packet.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">I believe Elad Ben-Yosef lived there for about 5 years.... Seems like this popcorn question would have been on the docs he signed when he bought the place.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>That's a reasonable and legally significant inference. If Ben-Yosef purchased Unit 606 approximately five years ago (circa 2020–2021), then the Continental House Q&amp;A — or a substantially identical version — would almost certainly have been part of his own buyer's disclosure package at the time of his purchase. The asbestos content of popcorn ceilings doesn't change, and the property manager's answer to that question wouldn't have changed either.</p>
+    <p>This means the Seller very likely had knowledge of the asbestos condition from the moment he acquired the unit — not just from the disclosure documents he himself signed and delivered to you. If his purchase disclosure can be obtained (e.g., via a title company or his prior broker), it would directly establish that he was informed of the asbestos years before he signed Form 17 and checked "NO."</p>
+    <p>The disclosure chain is clear: property manager knew → told buyers including Ben-Yosef → Ben-Yosef knew → Ben-Yosef checked "NO." That is the narrative Craig Blackmon will want to hear.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">Its more about understanding what we were told before closing. I just want things in a narrative timeline format because I'm going to call Craig Blackmon to check him out. Can you update both web files?</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>Both HTML files updated. The Case Summary now includes: (1) an April 15, 2026 timeline entry confirming the Continental House Q&amp;A as the source of asbestos knowledge; (2) expanded narrative in Section 3 quoting the Q&amp;A verbatim and noting Ben-Yosef's ~5-year ownership as evidence of prior knowledge; and (3) updated Section 6 replacing the generic "evidence of prior knowledge" item with the specific action item of obtaining Ben-Yosef's own purchase disclosure documents from 2020–2021. The Session Transcript was updated with today's full exchange.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-marker" id="toc9">&#9658;&nbsp; 9. Craig Blackmon Consulted — No Viable Claim</div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">So, I talked to Craig Blackmon and explained everything and he said I dont have a claim because I had 5 days to review the docs and thats it.... I didn't do my due diligence.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">
+    <p>That's disappointing to hear, but Craig is a straight shooter and that's actually valuable information to get quickly rather than spending money chasing something. His point is the standard defense in Washington disclosure cases — the buyer has a review period, and the expectation is that you read everything in the package, including the Continental House Q&amp;A that spelled out the asbestos.</p>
+    <p>The hard irony is that the very document that proves the seller knew is also the document you received and had 5 days to act on.</p>
+    <p>A few questions worth sitting with: did Craig specifically address the contradiction — that the Q&amp;A confirming asbestos was in the same package as the Form 17 where the seller checked "NO"? Because those two things are in direct conflict, and that feels like more than a due diligence failure on your part.</p>
+    <p>Practically speaking — the matter appears closed. No further legal action planned. The asbestos abatement will be treated as a renovation expense going forward.</p>
+  </div>
+
+  <div class="msg-label tony">Tony</div>
+  <div class="msg-text tony-msg">Yes, update both web files to reflect Craig's assessment.</div>
+
+  <div class="msg-label claude">Claude</div>
+  <div class="msg-text claude-msg">Both files updated. Section 8 of the Case Summary now records the Craig Blackmon consultation outcome, his reasoning (5-day review period / buyer due diligence standard), and the conclusion that the matter is closed with abatement treated as a renovation cost. Session Transcript updated with this full exchange.</div>
+
+  <div class="page-footer">
+    Byorick/Ferrante &nbsp;|&nbsp; 100 Ward St Unit 606, Seattle WA &nbsp;|&nbsp; Session: April 15, 2026 &nbsp;|&nbsp; CONFIDENTIAL
+  </div>
+
+</div>
+</body>
+</html>
