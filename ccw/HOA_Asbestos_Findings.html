@@ -286,6 +286,54 @@
       vertical-align: middle;
     }
 
+    /* ── Table of contents / jump nav ── */
+    .toc {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--blue-mid);
+      border-radius: 4px;
+      padding: 14px 18px 12px;
+      margin: 0 0 24px;
+    }
+    .toc-label {
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px 14px;
+    }
+    .toc-grid a {
+      display: block;
+      padding: 7px 10px;
+      font-size: 13.5px;
+      color: var(--blue-dark);
+      text-decoration: none;
+      border-radius: 3px;
+      border-left: 3px solid transparent;
+      transition: background 0.12s, border-left-color 0.12s;
+      line-height: 1.35;
+    }
+    .toc-grid a:hover {
+      background: var(--blue-light);
+      border-left-color: var(--blue-mid);
+    }
+    .toc-grid a .num {
+      display: inline-block;
+      width: 20px;
+      font-weight: bold;
+      color: var(--blue-mid);
+    }
+
+    /* Smooth scroll + anchor offset so the fixed-looking header doesn't hide section tops */
+    html { scroll-behavior: smooth; }
+    .section { scroll-margin-top: 16px; }
+
     /* ── Footer ── */
     .page-footer {
       text-align: center;
@@ -307,6 +355,9 @@
       table.info-table td { padding: 8px 10px; font-size: 12.5px; }
       .quote-block, .callout-red, .callout-amber, .callout-green { padding: 12px 14px; }
       .contact-card { padding: 10px 14px; }
+      .toc { padding: 12px 14px 10px; }
+      .toc-grid { grid-template-columns: 1fr; gap: 2px; }
+      .toc-grid a { padding: 8px 10px; font-size: 13px; }
     }
   </style>
 </head>
@@ -330,8 +381,23 @@
     <strong>Notation:</strong> Items marked with an asterisk <span class="asterisk">*</span> are <em>inferred, extrapolated, or recommended</em> — not verbatim from the source documents. Unmarked items quote or restate content directly from the cited source.
   </div>
 
+  <!-- ── Jump nav ── -->
+  <nav class="toc" aria-label="On this page">
+    <div class="toc-label">On this page</div>
+    <div class="toc-grid">
+      <a href="#sec1"><span class="num">1.</span>The Key HOA Finding</a>
+      <a href="#sec2"><span class="num">2.</span>Building &amp; HOA Facts</a>
+      <a href="#sec3"><span class="num">3.</span>The Form 17 Contradiction</a>
+      <a href="#sec4"><span class="num">4.</span>What the HOA Docs Imply</a>
+      <a href="#sec5"><span class="num">5.</span>Regulatory Requirements</a>
+      <a href="#sec6"><span class="num">6.</span>Building-Level Rules</a>
+      <a href="#sec7"><span class="num">7.</span>Key Contacts</a>
+      <a href="#sec8"><span class="num">8.</span>Open Items &amp; Gaps</a>
+    </div>
+  </nav>
+
   <!-- ── Section 1: The key HOA finding ── -->
-  <section class="section">
+  <section class="section" id="sec1">
     <h2 class="section-title">1. The Key HOA Finding</h2>
 
     <p>The <em>Continental House — Questions &amp; Answers</em> document that the property manager provides to every buyer as part of the disclosure package contains two questions that settle the asbestos issue directly:</p>
@@ -352,7 +418,7 @@
   </section>
 
   <!-- ── Section 2: Building facts ── -->
-  <section class="section">
+  <section class="section" id="sec2">
     <h2 class="section-title">2. Building &amp; HOA Facts from the Disclosure</h2>
 
     <table class="info-table">
@@ -369,7 +435,7 @@
   </section>
 
   <!-- ── Section 3: The Form 17 contradiction ── -->
-  <section class="section">
+  <section class="section" id="sec3">
     <h2 class="section-title">3. The Form 17 Contradiction</h2>
 
     <p>Form 17 Section 7E asks explicitly about environmental hazards:</p>
@@ -384,10 +450,10 @@
   </section>
 
   <!-- ── Section 4: What this means for abatement ── -->
-  <section class="section">
+  <section class="section" id="sec4">
     <h2 class="section-title">4. What the HOA Docs Imply About the Abatement Process</h2>
 
-    <p>Neither the Form 17 nor the Q&amp;A lays out a formal step-by-step asbestos abatement procedure for owners. What they <em>do</em> establish is a set of constraints that any Unit 606 abatement scope has to respect (several of which are actually driven by government regulation — see <a href="#regulatory" class="reg-link">Section 5</a> below):</p>
+    <p>Neither the Form 17 nor the Q&amp;A lays out a formal step-by-step asbestos abatement procedure for owners. What they <em>do</em> establish is a set of constraints that any Unit 606 abatement scope has to respect (several of which are actually driven by government regulation — see <a href="#sec5" class="reg-link">Section 5</a> below):</p>
 
     <ul class="clean">
       <li><strong>Licensed / certified abatement contractor required.</strong> The Q&amp;A notes that prior popcorn-ceiling remodels in the building "have used an abatement company." The HOA doc describes this as past practice — but the requirement is actually mandatory under Washington law: only DOSH-certified asbestos abatement contractors may bid on or perform the work (see Section 5).</li>
@@ -399,7 +465,8 @@
   </section>
 
   <!-- ── Section 5: Regulatory requirements (city / county / state) ── -->
-  <section class="section" id="regulatory">
+  <section class="section" id="sec5">
+    <a id="regulatory"></a>
     <h2 class="section-title">5. Regulatory Requirements — King County, Washington State &amp; Seattle</h2>
 
     <p>The HOA docs describe building-level practice. Layered on top are three separate government frameworks that govern asbestos abatement in a Seattle condo. These are the rules that actually determine who can touch the material, what notifications are required, and what has to happen before renovation can begin.</p>
@@ -437,7 +504,7 @@
   </section>
 
   <!-- ── Section 6: Building-level controls that matter for contractors ── -->
-  <section class="section">
+  <section class="section" id="sec6">
     <h2 class="section-title">6. Building-Level Rules That Affect Abatement &amp; Renovation</h2>
 
     <p>Pulled from the Q&amp;A and the existing <a href="Condo-Contractor-Rules.html">Condo Contractor Rules</a> page:</p>
@@ -452,7 +519,7 @@
   </section>
 
   <!-- ── Section 7: Key contacts ── -->
-  <section class="section">
+  <section class="section" id="sec7">
     <h2 class="section-title">7. Key Contacts — HOA &amp; Regulatory</h2>
 
     <div class="contact-card">
@@ -513,7 +580,7 @@
   </section>
 
   <!-- ── Section 8: Open items ── -->
-  <section class="section">
+  <section class="section" id="sec8">
     <h2 class="section-title">8. Open Items &amp; Gaps</h2>
 
     <div class="callout-amber">
