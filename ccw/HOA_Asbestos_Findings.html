@@ -261,6 +261,31 @@
       margin-left: 2px;
     }
 
+    /* ── Inline regulatory links ── */
+    a.reg-link {
+      color: var(--blue-mid);
+      text-decoration: underline;
+      text-decoration-color: rgba(46,95,163,0.4);
+      text-underline-offset: 2px;
+      font-weight: 600;
+    }
+    a.reg-link:hover { color: var(--blue-dark); text-decoration-color: var(--blue-dark); }
+
+    /* ── Agency label ── */
+    .agency {
+      display: inline-block;
+      background: var(--blue-tint);
+      color: var(--blue-dark);
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
     /* ── Footer ── */
     .page-footer {
       text-align: center;
@@ -362,20 +387,58 @@
   <section class="section">
     <h2 class="section-title">4. What the HOA Docs Imply About the Abatement Process</h2>
 
-    <p>Neither the Form 17 nor the Q&amp;A lays out a formal step-by-step asbestos abatement procedure for owners. What they <em>do</em> establish is a set of constraints that any Unit 606 abatement scope has to respect:</p>
+    <p>Neither the Form 17 nor the Q&amp;A lays out a formal step-by-step asbestos abatement procedure for owners. What they <em>do</em> establish is a set of constraints that any Unit 606 abatement scope has to respect (several of which are actually driven by government regulation — see <a href="#regulatory" class="reg-link">Section 5</a> below):</p>
 
     <ul class="clean">
-      <li><strong>Licensed abatement company required.</strong> The Q&amp;A explicitly states that remodels which disturbed popcorn ceilings "used an abatement company." <span class="asterisk">*</span> Characterizing this as "the HOA's working standard, not the owner's discretion" is an inference — the Q&amp;A states the practice but does not explicitly mandate it as policy.</li>
+      <li><strong>Licensed / certified abatement contractor required.</strong> The Q&amp;A notes that prior popcorn-ceiling remodels in the building "have used an abatement company." The HOA doc describes this as past practice — but the requirement is actually mandatory under Washington law: only DOSH-certified asbestos abatement contractors may bid on or perform the work (see Section 5).</li>
       <li><strong>HOA Board approval of alterations.</strong> The Q&amp;A notes that a mini-split AC unit "would need prior approval by the Board — See attached." <span class="asterisk">*</span> Extending that requirement to ceiling abatement, drywall replacement, and hardwood install is an inference — the Q&amp;A names AC specifically; the broader alteration-approval scope has not been verified against the Declaration or Rules &amp; Regulations.</li>
       <li><strong>Hard-surface flooring triggers acoustic testing.</strong> Per the Q&amp;A: "The Owner shall refer to hard surface flooring specifications (Policy attached). The Association's vendor, <strong>Censeo (206-866-9020)</strong>, shall perform the acoustical sound testing at the owner's expense."</li>
-      <li><strong>Sequencing.</strong> <span class="asterisk">*</span> Abatement must be completed <em>before</em> any renovation work that disturbs ceilings or involves flooring replacement — this is standard WA DOSH / EPA NESHAP practice and reflected in the Unit 606 project plan, but is not spelled out in the provided HOA docs.</li>
+      <li><strong>Sequencing — abatement before renovation.</strong> Not spelled out in the HOA docs, but it's a regulatory requirement: PSCAA and Seattle SDCI both require the asbestos survey and (where applicable) abatement to be addressed before renovation work that would disturb the material can proceed (see Section 5).</li>
       <li><strong>No building-wide asbestos project on record.</strong> Two years of HOA board-meeting minutes were reviewed; nothing about asbestos remediation appears — so there is no pending building-wide abatement that would cover Unit 606. (Sourced from the existing Case Summary, not the Form 17 PDF.)</li>
     </ul>
   </section>
 
-  <!-- ── Section 5: Building-level controls that matter for contractors ── -->
+  <!-- ── Section 5: Regulatory requirements (city / county / state) ── -->
+  <section class="section" id="regulatory">
+    <h2 class="section-title">5. Regulatory Requirements — King County, Washington State &amp; Seattle</h2>
+
+    <p>The HOA docs describe building-level practice. Layered on top are three separate government frameworks that govern asbestos abatement in a Seattle condo. These are the rules that actually determine who can touch the material, what notifications are required, and what has to happen before renovation can begin.</p>
+
+    <h3 class="sub-title"><span class="agency">PSCAA</span> Puget Sound Clean Air Agency — primary local regulator</h3>
+    <p>PSCAA regulates asbestos in King, Kitsap, Pierce, and Snohomish counties. For Unit 606 specifically:</p>
+    <ul class="clean">
+      <li>A pre-project <strong>asbestos survey by an AHERA-certified building inspector</strong> is required before any renovation or demolition — see <a href="https://pscleanair.gov/185/Asbestos" class="reg-link" target="_blank" rel="noopener">PSCAA — Asbestos overview</a> and <a href="https://pscleanair.gov/186/Regulating-Asbestos" class="reg-link" target="_blank" rel="noopener">Regulating Asbestos</a>.</li>
+      <li>An <strong>Asbestos/Demolition Notification form plus filing fee</strong> must be submitted to PSCAA <em>before</em> any asbestos removal begins. The notification cannot be amended after filing — a mistake means starting a new one. See <a href="https://www.pscleanair.gov/668/File-a-Notification" class="reg-link" target="_blank" rel="noopener">File a Notification</a>.</li>
+      <li>PSCAA offers an exemption for <strong>owner-occupied single-family homeowners</strong> doing their own renovations (<a href="https://pscleanair.gov/192/Homeowner-Renovation" class="reg-link" target="_blank" rel="noopener">Homeowner Renovation page</a>) — but this <strong>does not apply to condos</strong>. Condo owners must hire a certified asbestos abatement contractor.</li>
+    </ul>
+
+    <h3 class="sub-title"><span class="agency">L&amp;I / DOSH</span> WA Dept. of Labor &amp; Industries — Chapter 296-65 WAC</h3>
+    <p>State law sets the worker-safety and contractor-certification rules. Full text: <a href="https://app.leg.wa.gov/wac/default.aspx?cite=296-65&amp;full=true" class="reg-link" target="_blank" rel="noopener">Chapter 296-65 WAC — Asbestos Removal and Encapsulation</a>.</p>
+    <ul class="clean">
+      <li>Only <strong>DOSH-certified asbestos abatement contractors</strong> may bid on or perform asbestos projects — see <a href="https://www.lni.wa.gov/licensing-permits/other-licenses-permits/asbestos-certification" class="reg-link" target="_blank" rel="noopener">L&amp;I Asbestos Certification</a>.</li>
+      <li>The contractor must employ at least one <strong>certified asbestos supervisor</strong> providing direct on-site supervision.</li>
+      <li>Only <strong>certified asbestos workers</strong> may handle the material.</li>
+      <li>Notification to L&amp;I is required for any asbestos project greater than <strong>48 square feet or 10 linear feet</strong> — both bedrooms of Unit 606 will far exceed this threshold, so L&amp;I notification is mandatory.</li>
+    </ul>
+
+    <h3 class="sub-title"><span class="agency">SDCI</span> Seattle Department of Construction &amp; Inspections</h3>
+    <p>For the renovation work that wraps around the abatement:</p>
+    <ul class="clean">
+      <li>Interior alteration of a multifamily unit generally requires an <strong>SDCI construction permit (alteration / addition)</strong> — see <a href="https://www.seattle.gov/sdci/permits/permits-we-issue-(a-z)/construction-permit---addition-or-alteration" class="reg-link" target="_blank" rel="noopener">SDCI — Construction Permit: Addition or Alteration</a> and <a href="https://www.seattle.gov/sdci/permits/do-you-need-a-permit" class="reg-link" target="_blank" rel="noopener">Do You Need a Permit?</a>.</li>
+      <li>SDCI requires an <strong>asbestos survey</strong> to be completed before renovation or demolition work — this aligns with the PSCAA requirement above.</li>
+    </ul>
+
+    <h3 class="sub-title"><span class="agency">SPU</span> Seattle Public Utilities — disposal</h3>
+    <p>Asbestos-containing debris cannot go in standard construction dumpsters. See <a href="https://www.seattle.gov/utilities/construction-resources/collection-and-disposal/construction-and-demolition/asbestos" class="reg-link" target="_blank" rel="noopener">Seattle Utilities — Asbestos in Construction and Demolition</a>. A properly certified abatement contractor handles disposal as part of the scope.</p>
+
+    <div class="callout-green">
+      <strong>Bottom line:</strong> Before a single piece of ceiling gets touched in Unit 606, a PSCAA asbestos survey has to happen, a PSCAA Notification has to be filed, a DOSH-certified abatement contractor has to be on site, and an SDCI permit likely needs to be in hand. The HOA's rules sit <em>inside</em> this regulatory envelope — not the other way around.
+    </div>
+  </section>
+
+  <!-- ── Section 6: Building-level controls that matter for contractors ── -->
   <section class="section">
-    <h2 class="section-title">5. Building-Level Rules That Affect Abatement &amp; Renovation</h2>
+    <h2 class="section-title">6. Building-Level Rules That Affect Abatement &amp; Renovation</h2>
 
     <p>Pulled from the Q&amp;A and the existing <a href="Condo-Contractor-Rules.html">Condo Contractor Rules</a> page:</p>
 
@@ -388,9 +451,9 @@
     </ul>
   </section>
 
-  <!-- ── Section 6: Key contacts ── -->
+  <!-- ── Section 7: Key contacts ── -->
   <section class="section">
-    <h2 class="section-title">6. Key Contacts from the HOA Docs</h2>
+    <h2 class="section-title">7. Key Contacts — HOA &amp; Regulatory</h2>
 
     <div class="contact-card">
       <div class="name">Teresa Brown</div>
@@ -420,19 +483,48 @@
         <a href="tel:+12063695949">206-369-5949</a>
       </div>
     </div>
+
+    <div class="contact-card">
+      <div class="name">Puget Sound Clean Air Agency (PSCAA)</div>
+      <div class="role">Primary asbestos regulator — King County</div>
+      <div class="meta">
+        <a href="https://pscleanair.gov/185/Asbestos" target="_blank" rel="noopener">pscleanair.gov/Asbestos</a>
+      </div>
+      <div class="meta" style="font-size:12.5px; color:var(--muted);">Survey + Notification required before any asbestos work in a condo. No homeowner exemption for condos.</div>
+    </div>
+
+    <div class="contact-card">
+      <div class="name">WA L&amp;I — Asbestos Certification Program (DOSH)</div>
+      <div class="role">Contractor / supervisor / worker certification</div>
+      <div class="meta">
+        <a href="https://www.lni.wa.gov/licensing-permits/other-licenses-permits/asbestos-certification" target="_blank" rel="noopener">lni.wa.gov — Asbestos Certification</a> &nbsp;|&nbsp;
+        <a href="https://app.leg.wa.gov/wac/default.aspx?cite=296-65&amp;full=true" target="_blank" rel="noopener">Chapter 296-65 WAC</a>
+      </div>
+      <div class="meta" style="font-size:12.5px; color:var(--muted);">Use to verify any abatement contractor's certification status before hiring.</div>
+    </div>
+
+    <div class="contact-card">
+      <div class="name">Seattle SDCI</div>
+      <div class="role">Construction permit (alteration) for the renovation</div>
+      <div class="meta">
+        <a href="https://www.seattle.gov/sdci/permits/permits-we-issue-(a-z)/construction-permit---addition-or-alteration" target="_blank" rel="noopener">SDCI — Construction Permit: Alteration</a>
+      </div>
+    </div>
   </section>
 
-  <!-- ── Section 7: Open items ── -->
+  <!-- ── Section 8: Open items ── -->
   <section class="section">
-    <h2 class="section-title">7. Open Items &amp; Gaps</h2>
+    <h2 class="section-title">8. Open Items &amp; Gaps</h2>
 
     <div class="callout-amber">
       <strong>Still outstanding as of 04/19/2026:</strong>
       <ul class="clean" style="margin-top:6px;">
-        <li><span class="asterisk">*</span> Formal asbestos lab test / industrial-hygienist report on Unit 606 specifically. The <em>&lt;5%</em> figure in the Q&amp;A is a building-wide statement; a unit-specific sample with chain-of-custody before finalizing abatement scope is a recommendation, not a requirement stated in the HOA docs.</li>
-        <li><span class="asterisk">*</span> Written HOA alteration-approval submission for the Unit 606 abatement + flooring + bathroom + kitchen scope (Large Project category). Inferred requirement based on the mini-split approval precedent — the Q&amp;A does not explicitly define a Large Project category or approval form.</li>
-        <li><span class="asterisk">*</span> Abatement contractor quotes (licensed WA DOSH-certified firms). Recommendation based on standard practice.</li>
-        <li><span class="asterisk">*</span> Censeo scheduling for post-abatement flooring test. Follow-on action implied by the flooring policy; not an outstanding HOA obligation on its own.</li>
+        <li><strong>AHERA-certified asbestos survey on Unit 606.</strong> Required under <a href="https://pscleanair.gov/185/Asbestos" class="reg-link" target="_blank" rel="noopener">PSCAA rules</a> before any work. The HOA's Q&amp;A &lt;5% figure is a building-wide statement and is <em>not</em> a substitute for a unit-specific survey with chain of custody.</li>
+        <li><strong>PSCAA Asbestos/Demolition Notification.</strong> Must be filed (with fee) before abatement begins — <a href="https://www.pscleanair.gov/668/File-a-Notification" class="reg-link" target="_blank" rel="noopener">File a Notification</a>. Typically the abatement contractor submits this, but the owner is ultimately responsible for compliance.</li>
+        <li><strong>DOSH-certified abatement contractor selection + quotes.</strong> Verify certification via <a href="https://www.lni.wa.gov/licensing-permits/other-licenses-permits/asbestos-certification" class="reg-link" target="_blank" rel="noopener">L&amp;I Asbestos Certification</a>. Project will exceed the 48 sq ft / 10 linear ft L&amp;I notification threshold.</li>
+        <li><strong>Seattle SDCI construction permit (alteration).</strong> Needed for the renovation that follows abatement — <a href="https://www.seattle.gov/sdci/permits/permits-we-issue-(a-z)/construction-permit---addition-or-alteration" class="reg-link" target="_blank" rel="noopener">SDCI alteration permit</a>.</li>
+        <li><span class="asterisk">*</span> Written HOA alteration-approval submission for the Unit 606 abatement + flooring + bathroom + kitchen scope (Large Project category). Inferred requirement based on the mini-split approval precedent — the Q&amp;A does not explicitly define a Large Project category or approval form, and the Declaration / Rules &amp; Regulations have not yet been reviewed to confirm.</li>
+        <li><strong>Censeo scheduling</strong> for the post-abatement hard-surface flooring acoustic test (per the Continental House Q&amp;A flooring policy).</li>
       </ul>
     </div>
   </section>
