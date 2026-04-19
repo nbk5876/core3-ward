@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOA Doc Findings — Asbestos Abatement | 100 Ward St Unit 606</title>
+  <meta name="description" content="Summary of what the Continental House HOA documents and Seller Disclosure reveal about asbestos in Unit 606 and the abatement process required before renovation.">
+  <style>
+    :root {
+      --blue-dark: #1F3864;
+      --blue-mid: #2E5FA3;
+      --blue-light: #EEF2F7;
+      --blue-tint: #D6E4F0;
+      --row-alt: #F4F7FB;
+      --accent: #C0392B;
+      --green-dark: #16622A;
+      --red-accent: #8B0000;
+      --amber: #B7791F;
+      --amber-bg: #FFF9E6;
+      --divider: #CCCCCC;
+      --border: #C8D8E8;
+      --text: #1a1a1a;
+      --muted: #555;
+      --bg: #f4f6f9;
+      --white: #ffffff;
+      --max-width: 860px;
+      --font: Arial, 'Helvetica Neue', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Top ribbon ── */
+    .ribbon {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,0.85);
+      font-size: 11px;
+      font-style: italic;
+      padding: 6px 20px;
+      letter-spacing: 0.03em;
+      text-align: center;
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      background: linear-gradient(180deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+      color: var(--white);
+      padding: 28px 20px 24px;
+      text-align: center;
+    }
+    .page-header .label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #A8C4E0;
+      margin-bottom: 8px;
+    }
+    .page-header h1 {
+      font-size: 1.55rem;
+      font-weight: bold;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .page-header .subtitle {
+      font-size: 13px;
+      color: #D6E4F0;
+      margin-top: 6px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background: var(--white);
+      padding: 28px 28px 40px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    /* ── Intro block ── */
+    .intro {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue-mid);
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      font-size: 14.5px;
+    }
+    .intro strong { color: var(--blue-dark); }
+
+    /* ── Section ── */
+    .section {
+      margin: 28px 0 8px;
+    }
+    h2.section-title {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: var(--blue-dark);
+      border-bottom: 2px solid var(--blue-dark);
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    h3.sub-title {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: var(--blue-mid);
+      margin: 16px 0 8px;
+    }
+
+    p { margin-bottom: 10px; font-size: 15px; }
+
+    /* ── Info table ── */
+    table.info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 6px;
+      font-size: 13.5px;
+    }
+    table.info-table td {
+      padding: 9px 12px;
+      border: 1px solid var(--divider);
+      vertical-align: top;
+    }
+    table.info-table td.label {
+      font-weight: bold;
+      width: 38%;
+      background: var(--row-alt);
+      color: var(--blue-mid);
+    }
+    table.info-table tr:nth-child(even) td { background: var(--blue-light); }
+    table.info-table tr:nth-child(even) td.label { background: var(--blue-tint); }
+
+    /* ── Quote block (verbatim from HOA docs) ── */
+    .quote-block {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue-mid);
+      padding: 12px 18px;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 12px 0;
+      color: #333;
+    }
+    .quote-block .q { font-weight: bold; font-style: normal; color: var(--blue-dark); }
+    .quote-block .a { font-weight: bold; font-style: normal; }
+
+    /* ── Callouts ── */
+    .callout-red {
+      background: #fff8f8;
+      border-left: 5px solid var(--red-accent);
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .callout-red strong { color: var(--red-accent); }
+
+    .callout-amber {
+      background: var(--amber-bg);
+      border-left: 5px solid var(--amber);
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .callout-amber strong { color: var(--amber); }
+
+    .callout-green {
+      background: #f2faf4;
+      border-left: 5px solid var(--green-dark);
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .callout-green strong { color: var(--green-dark); }
+
+    /* ── Lists ── */
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 12px;
+    }
+    ul.clean li {
+      font-size: 14.5px;
+      line-height: 1.6;
+      padding: 7px 0 7px 22px;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    ul.clean li:before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: var(--blue-mid);
+      font-size: 18px;
+      top: 3px;
+    }
+    ul.clean li strong { color: var(--blue-dark); }
+    ul.clean li:last-child { border-bottom: none; }
+
+    /* ── Contact cards ── */
+    .contact-card {
+      background: var(--row-alt);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--blue-mid);
+      border-radius: 3px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .contact-card .name { font-weight: bold; color: var(--blue-dark); font-size: 15px; }
+    .contact-card .role { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+    .contact-card .meta { margin-top: 6px; }
+    .contact-card a { color: var(--blue-mid); text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── Related links ── */
+    .related-links {
+      background: var(--row-alt);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 14px 18px;
+      margin: 20px 0;
+    }
+    .related-links h3 {
+      font-size: 13px;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .related-links ul { list-style: none; padding: 0; margin: 0; }
+    .related-links li { padding: 4px 0; font-size: 14px; }
+    .related-links a { color: var(--blue-mid); text-decoration: none; font-weight: 600; }
+    .related-links a:hover { text-decoration: underline; }
+
+    /* ── Source pill ── */
+    .source {
+      display: inline-block;
+      font-size: 11px;
+      color: var(--muted);
+      background: #f0f3f7;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      text-align: center;
+      font-size: 11.5px;
+      color: var(--muted);
+      border-top: 1px solid var(--divider);
+      padding-top: 14px;
+      margin-top: 34px;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      body { font-size: 15px; }
+      .container { padding: 20px 16px 30px; }
+      .page-header { padding: 22px 16px 18px; }
+      .page-header h1 { font-size: 1.25rem; }
+      h2.section-title { font-size: 0.95rem; }
+      table.info-table td.label { width: 42%; font-size: 12.5px; }
+      table.info-table td { padding: 8px 10px; font-size: 12.5px; }
+      .quote-block, .callout-red, .callout-amber, .callout-green { padding: 12px 14px; }
+      .contact-card { padding: 10px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ribbon">PRIVATE REFERENCE — BYORICK / FERRANTE — UNIT 606</div>
+
+<header class="page-header">
+  <div class="label">HOA Document Research</div>
+  <h1>Asbestos Abatement — What the HOA Docs Actually Say</h1>
+  <div class="subtitle">100 Ward Street, Unit 606 &nbsp;|&nbsp; The Continental House &nbsp;|&nbsp; Seattle, WA</div>
+</header>
+
+<main class="container">
+
+  <div class="intro">
+    <strong>Purpose.</strong> This page pulls together everything the HOA / property-manager / seller-disclosure documents for Unit 606 actually say about <strong>asbestos</strong> and <strong>abatement</strong> — so the relevant facts are in one place for renovation planning, HOA approvals, and contractor conversations.
+    <br><br>
+    <strong>Sources reviewed:</strong> Form 17 Seller Disclosure Statement (signed by seller 03/15/2026), the <em>"Continental House — Questions &amp; Answers"</em> document attached to that disclosure by property manager Teresa Brown (CWD Group), and the existing Unit 606 Contractor Rules and Case Summary pages on core3.com/ward/ccw/.
+  </div>
+
+  <!-- ── Section 1: The key HOA finding ── -->
+  <section class="section">
+    <h2 class="section-title">1. The Key HOA Finding</h2>
+
+    <p>The <em>Continental House — Questions &amp; Answers</em> document that the property manager provides to every buyer as part of the disclosure package contains two questions that settle the asbestos issue directly:</p>
+
+    <div class="quote-block">
+      <span class="q">Q: Is there asbestos present in the popcorn ceilings?</span><br>
+      <span class="a">A: The popcorn ceilings have trace amounts of asbestos, less than 5%.</span>
+      <br><br>
+      <span class="q">Q: How have popcorn ceilings been handled in units that were remodeled?</span><br>
+      <span class="a">A: The remodels have used an abatement company.</span>
+    </div>
+
+    <p class="source">Source: "The Continental House — Questions &amp; Answers," attached page 7 of the Seller Disclosure Statement, Form 17 Rev 8/21, signed 03/15/2026.</p>
+
+    <div class="callout-green">
+      <strong>Plain-language translation:</strong> The HOA officially acknowledges that trace asbestos (under 5%) exists in the popcorn-textured ceilings throughout the building — and that any unit which has been remodeled has gone through a licensed abatement company as part of that work. This is the HOA's written, standing position.
+    </div>
+  </section>
+
+  <!-- ── Section 2: Building facts ── -->
+  <section class="section">
+    <h2 class="section-title">2. Building &amp; HOA Facts from the Disclosure</h2>
+
+    <table class="info-table">
+      <tr><td class="label">Property</td><td>100 Ward Street, Unit 606, Seattle, WA 98109 (King County)</td></tr>
+      <tr><td class="label">Building</td><td>The Continental House — year of original construction: <strong>1970</strong></td></tr>
+      <tr><td class="label">HOA / Property Manager</td><td>Teresa Brown, CWD Group, Inc. — 206-706-8000</td></tr>
+      <tr><td class="label">Monthly HOA Assessment</td><td>$1,018.38 per month</td></tr>
+      <tr><td class="label">Pending Special Assessments</td><td>None disclosed</td></tr>
+      <tr><td class="label">Last Structural / Pest Inspection</td><td>Rinehart Inspection — 11/24/2025</td></tr>
+      <tr><td class="label">Internet Provider</td><td>ATLAS</td></tr>
+    </table>
+
+    <p class="source">Source: Form 17 Seller Disclosure Statement, Sections 4, 5, 6.</p>
+  </section>
+
+  <!-- ── Section 3: The Form 17 contradiction ── -->
+  <section class="section">
+    <h2 class="section-title">3. The Form 17 Contradiction</h2>
+
+    <p>Form 17 Section 7E asks explicitly about environmental hazards:</p>
+
+    <div class="quote-block">
+      "Are there any substances, materials, or products in or on the property that may be environmental concerns, such as <strong>asbestos</strong>, formaldehyde, radon gas, lead-based paint, fuel or chemical storage tanks, or contaminated soil or water?"
+    </div>
+
+    <div class="callout-red">
+      <strong>The Seller checked "NO" to Section 7E</strong> — even though the Continental House Q&amp;A attached to the same disclosure package confirms trace asbestos in popcorn ceilings throughout the building. Legal consultation (Craig Blackmon, 04/15/2026) concluded there is no viable claim because the Q&amp;A was delivered within the 5-day review window, placing the duty of diligence on the buyer. <strong>Matter closed.</strong> See the <a href="Case_Summary_Unit606_Asbestos.html">Case Summary</a> for the full legal record.
+    </div>
+  </section>
+
+  <!-- ── Section 4: What this means for abatement ── -->
+  <section class="section">
+    <h2 class="section-title">4. What the HOA Docs Imply About the Abatement Process</h2>
+
+    <p>Neither the Form 17 nor the Q&amp;A lays out a formal step-by-step asbestos abatement procedure for owners. What they <em>do</em> establish is a set of constraints that any Unit 606 abatement scope has to respect:</p>
+
+    <ul class="clean">
+      <li><strong>Licensed abatement company required.</strong> The Q&amp;A explicitly states that remodels which disturbed popcorn ceilings "used an abatement company" — this is the HOA's working standard, not the owner's discretion.</li>
+      <li><strong>HOA Board approval of alterations.</strong> The Q&amp;A notes that a mini-split AC unit "would need prior approval by the Board — See attached." By extension, any alteration that disturbs building materials (including ceiling abatement, drywall replacement, and subsequent hardwood install) falls under the HOA's alteration-approval process.</li>
+      <li><strong>Hard-surface flooring triggers acoustic testing.</strong> Per the Q&amp;A: "The Owner shall refer to hard surface flooring specifications (Policy attached). The Association's vendor, <strong>Censeo (206-866-9020)</strong>, shall perform the acoustical sound testing at the owner's expense." Any flooring work that follows ceiling abatement has to clear this independent test.</li>
+      <li><strong>Sequencing.</strong> Abatement must be completed <em>before</em> any renovation work that disturbs ceilings or involves flooring replacement. This is confirmed by the Unit 606 project plan and aligns with standard WA DOSH / EPA NESHAP abatement practice.</li>
+      <li><strong>No building-wide asbestos project on record.</strong> Two years of HOA board-meeting minutes were reviewed; nothing about asbestos remediation appears — so there is no pending building-wide abatement that would cover Unit 606.</li>
+    </ul>
+  </section>
+
+  <!-- ── Section 5: Building-level controls that matter for contractors ── -->
+  <section class="section">
+    <h2 class="section-title">5. Building-Level Rules That Affect Abatement &amp; Renovation</h2>
+
+    <p>Pulled from the Q&amp;A and the existing <a href="Condo-Contractor-Rules.html">Condo Contractor Rules</a> page:</p>
+
+    <ul class="clean">
+      <li><strong>Gas lines not metered</strong> — no gas stoves permitted; gas-fueled appliances for the kitchen remodel are off the table.</li>
+      <li><strong>Cooling options</strong> — a mini-split heat pump is the HOA-endorsed solution; installation requires prior Board approval.</li>
+      <li><strong>BBQ restriction</strong> — gas or electric only on balconies. Unrelated to abatement, but a relevant house-rule the Q&amp;A emphasizes.</li>
+      <li><strong>One parking space per unit</strong> — additional spaces only available through private rental from another owner.</li>
+      <li><strong>Contractor insurance, work-hour, and elevator-reservation rules</strong> — detailed on the Condo Contractor Rules page; abatement crews must satisfy these before starting work.</li>
+    </ul>
+  </section>
+
+  <!-- ── Section 6: Key contacts ── -->
+  <section class="section">
+    <h2 class="section-title">6. Key Contacts from the HOA Docs</h2>
+
+    <div class="contact-card">
+      <div class="name">Teresa Brown</div>
+      <div class="role">Property Manager — CWD Group, Inc.</div>
+      <div class="meta">Phone: <a href="tel:+12067068000">206-706-8000</a></div>
+      <div class="meta" style="font-size:12.5px; color:var(--muted);">First point of contact for alteration approvals, COI submissions, elevator reservations, and Board approval questions.</div>
+    </div>
+
+    <div class="contact-card">
+      <div class="name">Censeo</div>
+      <div class="role">HOA-designated acoustical testing vendor</div>
+      <div class="meta">Phone: <a href="tel:+12068669020">206-866-9020</a></div>
+      <div class="meta" style="font-size:12.5px; color:var(--muted);">Required for hard-surface flooring sound testing after abatement is complete. Cost is the owner's responsibility.</div>
+    </div>
+
+    <div class="contact-card">
+      <div class="name">Rinehart Inspection</div>
+      <div class="role">Structural / pest inspection — completed 11/24/2025</div>
+      <div class="meta" style="font-size:12.5px; color:var(--muted);">Disclosed as the most recent whole-house inspection on Form 17.</div>
+    </div>
+
+    <div class="contact-card">
+      <div class="name">Craig Blackmon — Seattle Property Lawyer</div>
+      <div class="role">Consulted 04/15/2026 — advised no viable claim against seller</div>
+      <div class="meta">
+        <a href="https://seattlepropertylawyer.com">seattlepropertylawyer.com</a> &nbsp;|&nbsp;
+        <a href="tel:+12063695949">206-369-5949</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 7: Open items ── -->
+  <section class="section">
+    <h2 class="section-title">7. Open Items &amp; Gaps</h2>
+
+    <div class="callout-amber">
+      <strong>Still outstanding as of 04/19/2026:</strong>
+      <ul class="clean" style="margin-top:6px;">
+        <li>Formal asbestos lab test / industrial-hygienist report on Unit 606 specifically (the <em>&lt;5%</em> figure is building-wide; Unit 606 needs its own sample chain-of-custody before abatement scope is finalized).</li>
+        <li>Written HOA alteration-approval submission for the Unit 606 abatement + flooring + bathroom + kitchen scope (Large Project category).</li>
+        <li>Abatement contractor quotes (licensed WA DOSH-certified firms).</li>
+        <li>Censeo scheduling for post-abatement flooring test.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Related pages ── -->
+  <div class="related-links">
+    <h3>Related Pages</h3>
+    <ul>
+      <li><a href="Condo-Contractor-Rules.html">Condo Contractor Rules — Continental House Unit 606</a></li>
+      <li><a href="Case_Summary_Unit606_Asbestos.html">Case Summary — Seller Disclosure Misrepresentation</a></li>
+      <li><a href="Session_Transcript_Unit606.html">Session Transcript — Unit 606 Asbestos Review</a></li>
+    </ul>
+  </div>
+
+  <div class="page-footer">
+    100 Ward St Unit 606 &nbsp;|&nbsp; HOA Document Findings — Asbestos Abatement &nbsp;|&nbsp; Prepared April 2026<br>
+    This page summarizes findings from personal records for Tony Byorick's reference. Not legal advice.
+  </div>
+
+</main>
+
+</body>
+</html>
