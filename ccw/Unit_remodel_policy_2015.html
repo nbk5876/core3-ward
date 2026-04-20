@@ -5,328 +5,264 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit Remodel Policy (2015) — Continental House</title>
   <style>
-    :root {
-      --blue-dark:   #1F3864;
-      --blue-mid:    #2E5FA3;
-      --blue-light:  #D6E4F0;
-      --text:        #222;
-      --muted:       #555;
-      --border:      #C8D8E8;
-      --bg:          #F7FAFD;
-      --white:       #ffffff;
-      --max-width:   860px;
-    }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: Georgia, 'Times New Roman', serif;
+      font-family: Calibri, "Segoe UI", Arial, sans-serif;
       font-size: 16px;
-      line-height: 1.7;
-      color: var(--text);
-      background: var(--bg);
+      line-height: 1.55;
+      color: #000;
+      background: #ffffff;
+      padding: 0;
     }
 
-    .page-header {
-      background: var(--blue-dark);
-      color: var(--white);
-      padding: 28px 20px 22px;
-      text-align: center;
-    }
-    .page-header .label {
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #A8C4E0;
-      margin-bottom: 8px;
-    }
-    .page-header h1 {
-      font-size: 1.7rem;
-      font-weight: bold;
-      line-height: 1.3;
-    }
-    .page-header .subtitle {
-      font-family: Arial, sans-serif;
+    /* ── Back link bar (not in original PDF, kept subtle) ── */
+    .nav-bar {
+      background: #f6f6f6;
+      border-bottom: 1px solid #ddd;
+      padding: 8px 20px;
       font-size: 13px;
-      color: #C0D8F0;
+    }
+    .nav-bar a {
+      color: #666;
+      text-decoration: none;
+    }
+    .nav-bar a:hover { text-decoration: underline; color: #000; }
+
+    /* ── Document page ── */
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 60px 80px;
+      background: #ffffff;
+      position: relative;
+      min-height: calc(100vh - 40px);
+    }
+
+    /* ── Title block ── */
+    .title-block {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .title-block .title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      line-height: 1.25;
+    }
+    .title-block .assoc {
+      font-size: 1.25rem;
+      font-weight: bold;
+      line-height: 1.25;
+      margin-top: 2px;
+    }
+    .title-block .addr {
+      font-size: 1rem;
+      line-height: 1.4;
       margin-top: 8px;
     }
-
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 32px 20px 60px;
+    .title-block .revised {
+      font-size: 1.05rem;
+      font-weight: bold;
+      margin-top: 20px;
     }
 
-    .verbatim-note {
-      background: #F0F4F8;
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--blue-mid);
-      border-radius: 4px;
-      padding: 14px 18px;
-      margin-bottom: 22px;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.55;
+    /* ── Body paragraphs ── */
+    p {
+      margin-bottom: 12px;
     }
-    .verbatim-note strong {
-      color: var(--blue-dark);
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Section headings (bold + underline) ── */
+    h2.section-head {
+      font-size: 1.05rem;
+      font-weight: bold;
+      font-style: italic;
+      text-decoration: underline;
+      margin-top: 22px;
+      margin-bottom: 8px;
     }
 
-    .section {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--blue-mid);
-      border-radius: 4px;
-      padding: 22px 24px;
-      margin-bottom: 22px;
-    }
-    .section h2 {
-      font-family: Arial, sans-serif;
+    /* ── Subheadings (Par. 1, etc.) ── */
+    h3.sub-head {
       font-size: 1rem;
       font-weight: bold;
-      color: var(--blue-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--blue-light);
-    }
-    .section h3 {
-      font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-      font-weight: bold;
-      color: var(--blue-dark);
       margin-top: 14px;
-      margin-bottom: 6px;
-      text-decoration: underline;
+      margin-bottom: 2px;
     }
-    .section h3:first-child { margin-top: 0; }
-    .section p {
-      margin-bottom: 10px;
-    }
-    .section p:last-child { margin-bottom: 0; }
+    h3.sub-head:first-of-type { margin-top: 0; }
 
+    /* ── Numbered requirements list ── */
     ol.requirements {
-      counter-reset: req;
       list-style: none;
-      padding: 0;
-      margin: 8px 0 0 0;
+      counter-reset: req;
+      padding-left: 0;
+      margin-top: 8px;
     }
     ol.requirements > li {
-      position: relative;
-      padding-left: 36px;
-      margin-bottom: 14px;
       counter-increment: req;
-      line-height: 1.65;
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 14px;
+      line-height: 1.55;
     }
     ol.requirements > li::before {
       content: counter(req) ".";
       position: absolute;
-      left: 0;
+      left: 10px;
       top: 0;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      color: var(--blue-mid);
-      min-width: 28px;
+      font-weight: normal;
     }
     ol.requirements > li:last-child { margin-bottom: 0; }
 
-    .contacts {
-      background: #F0F4F8;
-      border-radius: 4px;
-      padding: 12px 16px;
-      margin-top: 8px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-    .contacts .contact-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 4px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .contacts .contact-row:last-child { border-bottom: none; }
-    .contacts .name { font-weight: bold; color: var(--blue-dark); }
-    .contacts .phone { color: var(--muted); font-family: Consolas, monospace; }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 18px;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: var(--blue-mid);
-      text-decoration: none;
-    }
-    .back-link:hover { text-decoration: underline; color: var(--blue-dark); }
-
-    .references {
-      background: #F0F4F8;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 18px 22px;
-      margin-top: 30px;
-    }
-    .references h3 {
-      font-family: Arial, sans-serif;
-      font-size: 0.85rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-    .references ul {
-      list-style: none;
-      padding: 0;
-    }
-    .references ul li {
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: var(--muted);
-      padding: 5px 0;
-      border-bottom: 1px solid var(--border);
-      line-height: 1.5;
-    }
-    .references ul li:last-child { border-bottom: none; }
-
-    footer {
-      text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      color: #999;
-      padding: 24px 20px;
-      border-top: 1px solid var(--border);
+    /* ── Board contacts table-like block ── */
+    .contacts-block {
       margin-top: 10px;
     }
+    .contacts-block .contact-row {
+      display: grid;
+      grid-template-columns: 200px 140px 1fr;
+      gap: 8px;
+      padding: 2px 0;
+    }
+    .contacts-block .name { font-weight: normal; }
+    .contacts-block .role { }
+    .contacts-block .phone { }
 
-    html { scroll-behavior: smooth; }
-    .section { scroll-margin-top: 16px; }
+    /* ── Page footer (Page X of Y) ── */
+    .page-footer {
+      text-align: right;
+      font-size: 0.95rem;
+      font-weight: bold;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+    }
+    .page-footer .page-num strong {
+      font-weight: bold;
+    }
 
-    @media (max-width: 600px) {
-      .page-header h1 { font-size: 1.3rem; }
-      .section { padding: 16px; }
-      .container { padding: 20px 14px 40px; }
+    /* ── Source note (tiny, bottom) ── */
+    .source-note {
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 1px solid #ddd;
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .page { padding: 28px 22px 50px; }
+      .title-block .title { font-size: 1.2rem; }
+      .title-block .assoc { font-size: 1.1rem; }
+      .title-block .addr { font-size: 0.95rem; }
       ol.requirements > li { padding-left: 30px; }
-      .contacts .contact-row { flex-direction: column; gap: 2px; }
+      ol.requirements > li::before { left: 4px; }
+      .contacts-block .contact-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 4px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="page-header">
-    <div class="label">Continental House Condominium Association · 100 Ward Street · Seattle WA 98109</div>
-    <h1>Unit Remodel Policy</h1>
-    <div class="subtitle">Revised and approved by the Board of Directors on May 5, 2015</div>
+  <div class="nav-bar">
+    <a href="audio_testing_rules.html">← Back to Acoustic Testing Rules</a>
   </div>
 
-  <div class="container">
+  <div class="page">
 
-    <a href="audio_testing_rules.html" class="back-link">← Back to Acoustic Testing Rules</a>
-
-    <div class="verbatim-note">
-      <strong>Verbatim transcription</strong> of the 2015 Unit Remodel Policy from <em>UnitRemodelPolicy-HardSurfacePolicyForContractor Irene Scan.pdf</em>, pages 1–2. This is the policy that was superseded by the Revised Unit Remodel Policy (which names Censeo as the acoustic vendor in place of Sparling). The 2015 version is preserved here for historical reference.
+    <div class="title-block">
+      <div class="title">Unit Remodel Policy</div>
+      <div class="assoc">Continental House Condominium Association</div>
+      <div class="addr">100 Ward Street<br>Seattle WA&nbsp;&nbsp;98109</div>
+      <div class="revised">Revised and approved by the Board of Directors on May 5, 2015</div>
     </div>
 
-    <div class="section" id="intro">
-      <h2>Policy Purpose</h2>
-      <p>To assist the parties involved in remodel work, the following requirements will be in effect. The purpose of these requirements is to allow the work to proceed under conditions that will mitigate noise, disruption, and inconvenience to the building residents.</p>
-    </div>
+    <p>To assist the parties involved in remodel work, the following requirements will be in effect. The purpose of these requirements is to allow the work to proceed under conditions that will mitigate noise, disruption, and inconvenience to the building residents.</p>
 
-    <div class="section" id="declarations">
-      <h2>Condo Declarations</h2>
-      <h3>Section XVIII – Structural Modifications</h3>
-      <p>"No structural modifications or alterations in any apartment shall be made without specific prior authorization in writing from the Board and the prior written approval of the mortgagees and deed of trust beneficiaries of the Property"</p>
-    </div>
+    <h2 class="section-head">Condo Declarations</h2>
+    <p>Section XVIII&nbsp;–&nbsp;Structural Modifications: "No structural modifications or alterations in any apartment shall be made without specific prior authorization in writing from the Board and the prior written approval of the mortgagees and deed of trust beneficiaries of the Property"</p>
 
-    <div class="section" id="house-rules">
-      <h2>House Rules</h2>
+    <h2 class="section-head">House Rules</h2>
 
-      <h3>Par. 1</h3>
-      <p>In accordance with the Clean Air Act, all common areas of the building have been designated as <strong>NO SMOKING ZONES</strong>. (Includes garage decks, hallways, elevators, stairwells, outside driveway areas — any area that is used in common by the residents).</p>
+    <h3 class="sub-head">Par. 1</h3>
+    <p>In accordance with the Clean Air Act, all common areas of the building have been designated as <strong>NO SMOKING ZONES</strong>. (Includes garage decks, hallways, elevators, stairwells, outside driveway areas -- any area that is used in common by the residents).</p>
 
-      <h3>Par. 5</h3>
-      <p>All construction, repair and maintenance work performed in the building and on the grounds shall be limited to the hours between <strong>8:00 A.M. and 4:30 P.M. Monday through Friday</strong> (excluding holidays) unless arrangements are made with the management for unusual situations.</p>
+    <h3 class="sub-head">Par. 5</h3>
+    <p>All construction, repair and maintenance work performed in the building and on the grounds shall be limited to the hours between <strong>8:00&nbsp;A.M. and 4:30&nbsp;P.M. Monday through Friday</strong> (excluding holidays) unless arrangements are made with the management for unusual situations.</p>
 
-      <h3>Par. 8</h3>
-      <p>In the event any construction or renovation work within the individually owned unit involves common area elements (common area elements within the unit would include, but not be limited to, plumbing, electrical, vents and building structural members), then prior approval by the Association Board of Directors will be required.</p>
-    </div>
+    <h3 class="sub-head">Par. 8</h3>
+    <p>In the event any construction or renovation work within the individually owned unit involves common area elements (common area elements within the unit would include, but not be limited to, plumbing, electrical, vents and building structural members), then prior approval by the Association Board of Directors will be required.</p>
 
-    <div class="section" id="requirements">
-      <h2>Board Requirements</h2>
-      <ol class="requirements">
+    <h2 class="section-head">Board Requirements</h2>
 
-        <li>The Owner will be responsible for all activities and persons involved in the remodel work, except that such responsibility may be delegated to the Owner's General Contractor.</li>
+    <ol class="requirements">
 
-        <li>If required by code, permits for work shall be obtained and posted in the unit.</li>
+      <li>The Owner will be responsible for all activities and persons involved in the remodel work, except that such responsibility may be delegated to the Owner's General Contractor.</li>
 
-        <li>Owner must provide a copy of contractor's business license, bond, and insurance certificate. Insurance certificate must name <strong>Continental House Condominium and CWD Group, Inc.</strong> as additional insured for no less than <strong>$1M/$2M aggregate</strong>.</li>
+      <li>If required by code, permits for work shall be obtained and posted in the unit.</li>
 
-        <li>Provide drawings, and/or plans of proposed alterations, along with brief description of alterations being proposed. Include anticipated project start and end dates.</li>
+      <li>Owner must provide a copy of contractor's business license, bond, and insurance certificate. Insurance certificate must name Continental House Condominium and CWD Group, Inc. as additional insured for no less than $1M/$2M aggregate.</li>
 
-        <li>Any walls that are removed with exposed plumbing behind them require isolation valves and angle stops to be installed. Photos of installed isolation valves and angle stops shall be provided to management for the Association's files before the walls are closed. All plumbing connections must have burst resistant hoses installed, and dishwashers must be equipped with drip pans. Any rebalancing of the stacks required by the water being shut off for plumbing work will be completed by the Association's vendor, <strong>Quality Plumbing 206-789-7676</strong> at the owner's expense.</li>
+      <li>Provide drawings, and/or plans of proposed alterations, along with brief description of alterations being proposed. Include anticipated project start and end dates.</li>
 
-        <li>Any fireplace remodel shall require installing an on/off switch and blower fan — if not already installed. No fireplaces may be controlled by a thermostat.</li>
+      <li>Any walls that are removed with exposed plumbing behind them require isolation valves and angle stops to be installed. Photos of installed isolation valves and angle stops shall be provided to management for the Association's files before the walls are closed. All plumbing connections must have burst resistant hoses installed, and dishwashers must be equipped with drip pans. Any rebalancing of the stacks required by the water being shut off for plumbing work will be completed by the Association's vendor, Quality Plumbing 206-789-7676 at the owner's expense.</li>
 
-        <li>Any changes to the unit's Aiphone system must be completed by the Association's vendor, <strong>Impulse Audio 206-650-0075</strong> at the owner's expense.</li>
+      <li>Any fireplace remodel shall require installing an on/off switch and blower fan – if not already installed. No fireplaces may be controlled by a thermostat.</li>
 
-        <li>Owners shall refer to hard surface flooring specifications as a guide for hard surface flooring replacement, repair and/or new installation. The Association's vendor, <strong>Sparling 206-667-0555</strong> shall perform the acoustical sound testing at the owner's expense.</li>
+      <li>Any changes to the unit's Aiphone system must be completed by the Association's vendor, Impulse Audio 206-650-0075 at the owner's expense.</li>
 
-        <li>Owners are reminded they are prohibited from giving keys or fobs to non-residents. However, at the sole discretion of the Board, an additional entry fob may be assigned to the General Contractor. The Owner will pay a fob deposit fee of <strong>$500.00</strong>, to be refunded upon completion of the project. In the event that security is compromised by the General Contractor's use of the fob, the Board may require immediate return of the fob.</li>
+      <li>Owners shall refer to hard surface flooring specifications as a guide for hard surface flooring replacement, repair and/or new installation. The Association's vendor, Sparling 206-667-0555 shall perform the acoustical sound testing at the owner's expense.</li>
 
-        <li>All contractors, vendors, and persons working on the unit will park their vehicles on the street. Parking on garage decks, driveways, and guest parking areas is prohibited, and vehicles violating this requirement may be towed at the owner's expense.</li>
+      <li>Owners are reminded they are prohibited from giving keys or fobs to non-residents. However, at the sole discretion of the Board, an additional entry fob may be assigned to the General Contractor. The Owner will pay a fob deposit fee of $500.00, to be refunded upon completion of the project. In the event that security is compromised by the General Contractor's use of the fob, the Board may require immediate return of the fob.</li>
 
-        <li>Workers will enter and exit the building using only the doorway into the <strong>A-Deck garage</strong>. They will not use the building's front entry.</li>
+      <li>All contractors, vendors, and persons working on the unit will park their vehicles on the street. Parking on garage decks, driveways, and guest parking areas is prohibited, and vehicles violating this requirement may be towed at the owner's expense.</li>
 
-        <li>Materials and tools will be brought up to the Unit from A-Deck only, using the <strong>West (left) elevator</strong>. Elevator pads are required and the Contractor will be responsible for coordinating installation of the pads through CWD Move Coordinator. The carpet on the elevator floor will be protected by a hardboard insert. Unless there are repeating days that elevator padding is required, it is expected that at the end of the workday, elevator pads will be removed, ceiling panels re-installed, and the carpet cover removed.</li>
+      <li>Workers will enter and exit the building using only the doorway into the A-Deck garage. They will not use the building's front entry.</li>
 
-        <li>A person shall stand by to move the vehicle if it interferes with a resident's vehicle when unloading vehicles on A-Deck. The vehicle will be moved out and the overhead door closed immediately after the unloading is finished.</li>
+      <li>Materials and tools will be brought up to the Unit from A-Deck only, using the West (left) elevator. Elevator pads are required and the Contractor will be responsible for coordinating installation of the pads through CWD Move Coordinator. The carpet on the elevator floor will be protected by a hardboard insert. Unless there are repeating days that elevator padding is required, it is expected that at the end of the workday, elevator pads will be removed, ceiling panels re-installed, and the carpet cover removed.</li>
 
-        <li>The Contractor will be responsible for cleaning all common areas of dust and debris using his own equipment. This includes elevators, hallways, and garage decks. The clean-up will be on-going throughout the day, to ensure clean and safe conditions for the residents at all times. Tools and materials will not be stored in the hallways or other common areas, including the garage.</li>
+      <li>A person shall stand by to move the vehicle if it interferes with a resident's vehicle when unloading vehicles on A-Deck. The vehicle will be moved out and the overhead door closed immediately after the unloading is finished.</li>
 
-        <li><strong>All debris from the remodel work will be disposed of off-site. Contractor debris is not allowed in the building dumpsters!</strong> When debris is transported, it will be sealed in 3 mil plastic contractor bags or equal to avoid contamination of common areas.</li>
+      <li>The Contractor will be responsible for cleaning all common areas of dust and debris using his own equipment. This includes elevators, hallways, and garage decks. The clean-up will be on-going throughout the day, to ensure clean and safe conditions for the residents at all times. Tools and materials will not be stored in the hallways or other common areas, including the garage.</li>
 
-        <li>Music and conversation loud enough to be heard from hallways or other units are prohibited.</li>
+      <li><strong>All debris from the remodel work will be disposed of <u>off-site</u>. Contractor debris is not allowed in the building dumpsters!</strong> When debris is transported, it will be sealed in 3 mil plastic contractor bags or equal to avoid contamination of common areas.</li>
 
-        <li>Owner and Contractor acknowledge the Board is authorized to enforce compliance with the above requirements by denying the Contractor entry to the building until the violation is corrected.</li>
+      <li>Music and conversation loud enough to be heard from hallways or other units are prohibited.</li>
 
-      </ol>
-    </div>
+      <li>Owner and Contractor acknowledge the Board is authorized to enforce compliance with the above requirements by denying the Contractor entry to the building until the violation is corrected.</li>
 
-    <div class="section" id="contacts">
-      <h2>Board Contacts (working hours only)</h2>
-      <div class="contacts">
-        <div class="contact-row">
-          <span class="name">Chris Keating</span>
-          <span class="phone">Board Member · 415-378-7704</span>
-        </div>
-        <div class="contact-row">
-          <span class="name">Ann Marie Pomerinke</span>
-          <span class="phone">Board Member · 206-367-1777</span>
-        </div>
+    </ol>
+
+    <h2 class="section-head">Board Contacts (working hours only)</h2>
+    <div class="contacts-block">
+      <div class="contact-row">
+        <span class="name">Chris Keating</span>
+        <span class="role">Board Member</span>
+        <span class="phone">415-378-7704</span>
       </div>
-      <p style="margin-top:12px; font-family: Arial, sans-serif; font-size: 13px; color: var(--muted);">
-        <em>Board of Directors, Continental House Association</em>
-      </p>
+      <div class="contact-row">
+        <span class="name">Ann Marie Pomerinke</span>
+        <span class="role">Board Member</span>
+        <span class="phone">206-367-1777</span>
+      </div>
     </div>
 
-    <div class="references">
-      <h3>References</h3>
-      <ul>
-        <li>4012 Paul Stuff / UnitRemodelPolicy-HardSurfacePolicyForContractor Irene Scan.pdf — Pages 1–2 (2015 policy version)</li>
-        <li>Mar 14 Docset From Paul / UnitRemodelPolicy-HardSurfacePolicyForContractor.pdf — Duplicate copy of the same policy (same content, confirmatory source)</li>
-        <li>See also: Revised Unit Remodel Policy (26 requirements, Censeo vendor) — pages 4–6 of the same PDF, which supersedes this 2015 version</li>
-      </ul>
+    <p style="margin-top:20px;"><strong><em>Board of Directors</em></strong><br><strong><em>Continental House Association</em></strong></p>
+
+    <div class="page-footer">
+      <span class="page-num">Page <strong>1 of 2</strong> &nbsp;·&nbsp; <strong>2 of 2</strong> (combined)</span>
+    </div>
+
+    <div class="source-note">
+      Verbatim transcription of the 2015 Unit Remodel Policy from <em>UnitRemodelPolicy-HardSurfacePolicyForContractor Irene Scan.pdf</em>, pages 1–2. Superseded by the Revised Unit Remodel Policy (which names Censeo as the acoustic vendor in place of Sparling). The 2015 version is preserved here for historical reference.
     </div>
 
   </div>
-
-  <footer>
-    Continental House Condominium · Unit 606 · 100 Ward Street, Seattle WA 98109
-  </footer>
 
 </body>
 </html>
