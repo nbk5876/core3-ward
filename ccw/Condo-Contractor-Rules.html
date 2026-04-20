@@ -187,6 +187,10 @@
       margin-top: 10px;
     }
 
+    /* Smooth scroll + anchor offset so the section tops aren't hidden */
+    html { scroll-behavior: smooth; }
+    .section, .highlight { scroll-margin-top: 16px; }
+
     /* ── Responsive ── */
     @media (max-width: 600px) {
       .page-header h1 { font-size: 1.3rem; }
@@ -205,31 +209,31 @@
 
   <div class="container">
 
-    <div class="section">
+    <div class="section" id="sec1">
       <h2>Building Entry</h2>
       <p>Workers must enter and exit only through the <strong>A-Deck garage entrance</strong>. They may never use the main lobby entrance.</p>
       <p>The owner should let contractors into the building <em>"whenever possible"</em> — you cannot hand your fob or key to a contractor without Board approval.</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="sec2">
       <h2>Access Devices (Fobs / Keys)</h2>
       <p>A contractor fob may only be issued at the <strong>Board's sole discretion</strong>, with a <strong>$500 refundable deposit</strong>. If security is compromised, the Board can demand immediate fob return.</p>
       <p>Residents are prohibited from lending their own access devices to contractors — violations can result in fines and confiscation of the device.</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="sec3">
       <h2>If You Don't Have a Contractor Fob</h2>
       <p>You'd need to be there (or send someone on your behalf) to let them in at 8 AM, since the main rule is that the owner lets contractors into the building <em>"whenever possible."</em></p>
       <p>There's no language saying it has to be you specifically, so a trusted person standing in for you would likely satisfy that requirement.</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="sec4">
       <h2>Board Pre-Approval Required</h2>
       <p>All construction and renovation work — including smaller improvements — must be pre-approved via the <strong>Residential Construction and Renovation Application</strong>.</p>
       <p>This explicitly includes any work involving plumbing, electrical, vents, or structural members. For asbestos abatement specifically, file this application before work begins.</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="sec5">
       <h2>Insurance &amp; Licensing</h2>
       <p>You must provide the Board with the contractor's:</p>
       <p>
@@ -239,27 +243,27 @@
       </p>
     </div>
 
-    <div class="section">
+    <div class="section" id="sec6">
       <h2>Work Hours</h2>
       <p><strong>Monday – Friday, 8:00 AM – 5:00 PM only.</strong> Weekends and holidays (12 listed in the Rules) are prohibited. The Board can grant exceptions.</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="sec7">
       <h2>Materials &amp; Elevator</h2>
       <p>All materials come in through <strong>A-Deck only</strong>, using the <strong>west (left) elevator</strong>. Elevator pads are required — coordinate with the CWD Move Coordinator to get them installed. Carpet protector sheeting must cover all common element flooring.</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="sec8">
       <h2>Parking</h2>
       <p>Contractors park on the <strong>street only</strong>. Guest parking and garage decks are off-limits. Violations may result in towing at the owner's expense.</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="sec9">
       <h2>Owner Liability</h2>
       <p>You are <strong>personally responsible</strong> for everything your contractors do, including fines for rule violations, security breaches, and any building damage they cause.</p>
     </div>
 
-    <div class="highlight">
+    <div class="highlight" id="sec10">
       <h2>Better Solution — Request a Contractor Fob</h2>
       <p>The Remodel Policy (Board Requirement #9) allows the Board to issue your General Contractor their own entry fob, with a <strong>$500 refundable deposit</strong>. If approved, the contractor can enter A-Deck independently each morning without you needing to be there. The deposit is refunded when the project completes, assuming no security issues.</p>
 
