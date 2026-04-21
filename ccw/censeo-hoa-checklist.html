@@ -154,6 +154,50 @@
       letter-spacing: 0.3px;
     }
     .flag .related a:hover { background: #BFD5EB; text-decoration: underline; }
+    /* Group heading */
+    .group-heading {
+      margin: 34px 0 14px;
+      padding: 14px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 6px solid var(--blue-mid);
+      border-radius: 4px;
+    }
+    .group-heading:first-of-type { margin-top: 10px; }
+    .group-heading h2 {
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--blue-dark);
+      margin-bottom: 4px;
+    }
+    .group-heading .g-sub {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .group-a { border-left-color: var(--accent); }
+    .group-b { border-left-color: #E6A817; }
+    .group-c { border-left-color: var(--blue-mid); }
+    .group-d { border-left-color: #2E8B2E; }
+    /* Owner chip on each flag */
+    .flag .owner-chip {
+      float: right;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 9px;
+      border-radius: 10px;
+      margin-top: 2px;
+    }
+    .chip-censeo { background: #FDEBE8; color: var(--accent); border: 1px solid #F0B8B0; }
+    .chip-scope  { background: #FEF4DC; color: #7D5A00; border: 1px solid #F0C040; }
+    .chip-hoa    { background: var(--blue-light); color: var(--blue-dark); border: 1px solid #BFD5EB; }
+    .chip-sched  { background: #EBF5EB; color: #1A5C1A; border: 1px solid #A8D5A8; }
     .ok {
       background: #EBF5EB;
       border: 1px solid #A8D5A8;
@@ -313,7 +357,7 @@
   <div class="page-header">
     <div class="label">Continental House Condominium · Unit 606</div>
     <h1>Censeo P26035 — HOA Compliance Check</h1>
-    <div class="subtitle">10 flags from comparing the Censeo fee proposal to the Hard Surface Flooring Policy, the ACC Application (BOD 19-1107), and related HOA rules.</div>
+    <div class="subtitle">10 flags from comparing the Censeo fee proposal to the Hard Surface Flooring Policy, the ACC Application (BOD 19-1107), and related HOA rules — grouped by who owns the fix.</div>
   </div>
 
   <div class="container">
@@ -336,12 +380,19 @@
     </div>
 
     <div class="highlight" id="summary">
-      <h2>At-a-Glance Summary</h2>
-      <p>Four flags are must-fix before signing: <strong>#1 (AIIC vs. FIIC reporting)</strong>, <strong>#2 (HOA deposit beyond Censeo's fee)</strong>, <strong>#3 (ACC application filing + fees)</strong>, and <strong>#7 (proposal addressed to the wrong party)</strong>. The others are coordination items.</p>
+      <h2>At-a-Glance Summary — Who Owns the Fix</h2>
+      <p>Only two of the ten flags are things <strong>Censeo</strong> needs to fix in its proposal (#1 and #7). Two more (#4 and #5) are Censeo scope questions to clarify. The remaining six are on <strong>you as the owner</strong> — HOA process and budget items (#2, #3, #6, #9) or scheduling and coordination (#8, #10). Grouped accordingly below.</p>
+    </div>
+
+    <!-- GROUP A: Censeo to fix in the proposal -->
+    <div class="group-heading group-a" id="group-censeo">
+      <h2>A · Censeo to Fix in the Proposal</h2>
+      <div class="g-sub">Two items Jeanette should address before you sign — follows the email you sent.</div>
     </div>
 
     <!-- FLAG 1 -->
     <div class="flag" id="flag1">
+      <span class="owner-chip chip-censeo">Censeo</span>
       <span class="flag-num">Flag 1</span><h3>AIIC vs. FIIC metric mismatch</h3>
       <p>The policy requires an <strong>FIIC</strong> rating. The Censeo scope mixes "AIIC" (steps 3, 4, 7) with "FIIC" (step 6 only). A Board submittal that only states AIIC could be bounced.</p>
       <blockquote>
@@ -353,35 +404,24 @@
       <div class="related"><a href="audio_testing_rules.html#sec3">↗ Acoustic Testing Rules · FIIC Criteria</a></div>
     </div>
 
-    <!-- FLAG 2 -->
-    <div class="flag" id="flag2">
-      <span class="flag-num">Flag 2</span><h3>HOA deposit is separate from and larger than Censeo's fee</h3>
-      <p>The Hard Surface Flooring Policy requires a deposit paid <em>to the Association</em> — 150% of testing cost or $1,000, whichever is more. At $3,910 of testing, that's <strong>$5,865 to the HOA</strong>, on top of the $3,910 paid to Censeo. It is refundable once the installation passes.</p>
-      <blockquote>
-        "Deposit: An amount equal to One Hundred Fifty percent (150%) of the cost of sound testing by a Board-approved Acoustic Consultant or $1,000, whichever is more."
-        <cite>Hard Surface Flooring Policy — Definitions</cite>
-      </blockquote>
-      <div class="rule">Source: HSFP Definitions / Policy Elements (new installation)</div>
-      <div class="related"><a href="audio_testing_rules.html#sec4">↗ Acoustic Testing Rules · Key Definitions (Deposit)</a></div>
+    <!-- FLAG 7 -->
+    <div class="flag" id="flag7">
+      <span class="owner-chip chip-censeo">Censeo</span>
+      <span class="flag-num">Flag 7</span><h3>Proposal addressed to Irene Ferrante, not the incoming owner</h3>
+      <p>The P26035 cover letter names Irene Ferrante as the client. The ACC application, deposit, Board correspondence, and test-report chain-of-custody all assume a single owner of record. Records mismatch is an easy avoidable issue.</p>
+      <p><strong>Action:*</strong> Ask Censeo to reissue the proposal with the incoming-owner name and email.</p>
+      <div class="rule">Source: Censeo P26035 cover letter</div>
     </div>
 
-    <!-- FLAG 3 -->
-    <div class="flag" id="flag3">
-      <span class="flag-num">Flag 3</span><h3>Separate ACC application, deposits, and fees</h3>
-      <p>Testing is not the whole of what the Board requires. The Renovation Application (BOD 19-1107) must be filed <strong>at least 45 days before work begins</strong>, with working drawings or specifications, a Certificate of Insurance naming Continental House as additional insured, and the fees below. A construction governance orientation has to happen roughly 30 days before work starts.</p>
-
-      <table class="money">
-        <tr><th>Item</th><th style="width:140px; text-align:right;">Amount</th></tr>
-        <tr><td>Damage &amp; Cleaning Deposit (refundable)</td><td class="amt">$1,000</td></tr>
-        <tr><td>Residential Common Area fee — per day of the project</td><td class="amt">$25 / day</td></tr>
-        <tr><td>Project Review Fee (CWD / Board)</td><td class="amt">$350</td></tr>
-        <tr><td>Outside architectural / legal / engineering review</td><td class="amt">As billed</td></tr>
-      </table>
-      <div class="rule">Source: ACC Application §1–§5 (Approved by BOD 19-1107)</div>
+    <!-- GROUP B: Censeo scope questions -->
+    <div class="group-heading group-b" id="group-scope">
+      <h2>B · Censeo Scope Questions to Clarify</h2>
+      <div class="g-sub">Could be a Censeo scope add-on, could be "not my job" — ask and decide.</div>
     </div>
 
     <!-- FLAG 4 -->
     <div class="flag" id="flag4">
+      <span class="owner-chip chip-scope">Scope Q</span>
       <span class="flag-num">Flag 4</span><h3>No Yantis "Standard Specification" review in Censeo's scope</h3>
       <p>For <em>replacement</em> work in the entry, kitchen, or bathroom, the policy requires the underlayment to meet the Michael Yantis "Standard Specification." Censeo's proposal tests the assembly, but does not review whether the proposed underlayment meets Yantis.*</p>
       <blockquote>
@@ -395,6 +435,7 @@
 
     <!-- FLAG 5 -->
     <div class="flag" id="flag5">
+      <span class="owner-chip chip-scope">Scope Q</span>
       <span class="flag-num">Flag 5</span><h3>Single mock-up only — living-room locale</h3>
       <p>Censeo installs one 5'×5' mock-up centrally in the living room. If the project scope includes entry, kitchen, or bathroom flooring, those rooms have a different FIIC threshold (55) and a spec-based rule, and the living-room mock-up won't speak to them.</p>
       <p><strong>Action:*</strong> Confirm with Censeo and the Board whether kitchen / entry / bathroom rooms need a separate mock-up or are satisfied by Yantis-spec compliance alone.</p>
@@ -402,8 +443,44 @@
       <div class="related"><a href="audio_testing_rules.html#sec4">↗ Acoustic Testing Rules · Replacement vs. New Install</a></div>
     </div>
 
+    <!-- GROUP C: Your HOA process & budget items -->
+    <div class="group-heading group-c" id="group-hoa">
+      <h2>C · Your HOA Process &amp; Budget Items</h2>
+      <div class="g-sub">Owner-side obligations surfaced by the policy — not Censeo's to solve, but important to plan for.</div>
+    </div>
+
+    <!-- FLAG 2 -->
+    <div class="flag" id="flag2">
+      <span class="owner-chip chip-hoa">You / HOA</span>
+      <span class="flag-num">Flag 2</span><h3>HOA deposit is separate from and larger than Censeo's fee</h3>
+      <p>The Hard Surface Flooring Policy requires a deposit paid <em>to the Association</em> — 150% of testing cost or $1,000, whichever is more. At $3,910 of testing, that's <strong>$5,865 to the HOA</strong>, on top of the $3,910 paid to Censeo. It is refundable once the installation passes.</p>
+      <blockquote>
+        "Deposit: An amount equal to One Hundred Fifty percent (150%) of the cost of sound testing by a Board-approved Acoustic Consultant or $1,000, whichever is more."
+        <cite>Hard Surface Flooring Policy — Definitions</cite>
+      </blockquote>
+      <div class="rule">Source: HSFP Definitions / Policy Elements (new installation)</div>
+      <div class="related"><a href="audio_testing_rules.html#sec4">↗ Acoustic Testing Rules · Key Definitions (Deposit)</a></div>
+    </div>
+
+    <!-- FLAG 3 -->
+    <div class="flag" id="flag3">
+      <span class="owner-chip chip-hoa">You / HOA</span>
+      <span class="flag-num">Flag 3</span><h3>Separate ACC application, deposits, and fees</h3>
+      <p>Testing is not the whole of what the Board requires. The Renovation Application (BOD 19-1107) must be filed <strong>at least 45 days before work begins</strong>, with working drawings or specifications, a Certificate of Insurance naming Continental House as additional insured, and the fees below. A construction governance orientation has to happen roughly 30 days before work starts.</p>
+
+      <table class="money">
+        <tr><th>Item</th><th style="width:140px; text-align:right;">Amount</th></tr>
+        <tr><td>Damage &amp; Cleaning Deposit (refundable)</td><td class="amt">$1,000</td></tr>
+        <tr><td>Residential Common Area fee — per day of the project</td><td class="amt">$25 / day</td></tr>
+        <tr><td>Project Review Fee (CWD / Board)</td><td class="amt">$350</td></tr>
+        <tr><td>Outside architectural / legal / engineering review</td><td class="amt">As billed</td></tr>
+      </table>
+      <div class="rule">Source: ACC Application §1–§5 (Approved by BOD 19-1107)</div>
+    </div>
+
     <!-- FLAG 6 -->
     <div class="flag" id="flag6">
+      <span class="owner-chip chip-hoa">You / HOA</span>
       <span class="flag-num">Flag 6</span><h3>Written permission from Unit 506 (the residence below)</h3>
       <p>For a new installation, the policy requires the <strong>owner</strong> to obtain written permission from the residences below the modified areas so the below unit can host the test. Censeo assumes "access to the residential units (above and below the test partition) will be provided and coordinated by others." That's you.</p>
       <blockquote>
@@ -414,25 +491,9 @@
       <div class="related"><a href="audio_testing_rules.html#sec6">↗ Acoustic Testing Rules · Pre-Installation Requirements</a></div>
     </div>
 
-    <!-- FLAG 7 -->
-    <div class="flag" id="flag7">
-      <span class="flag-num">Flag 7</span><h3>Proposal addressed to Irene Ferrante, not the incoming owner</h3>
-      <p>The P26035 cover letter names Irene Ferrante as the client. The ACC application, deposit, Board correspondence, and test-report chain-of-custody all assume a single owner of record. Records mismatch is an easy avoidable issue.</p>
-      <p><strong>Action:*</strong> Ask Censeo to reissue the proposal with the incoming-owner name and email.</p>
-      <div class="rule">Source: Censeo P26035 cover letter</div>
-    </div>
-
-    <!-- FLAG 8 -->
-    <div class="flag" id="flag8">
-      <span class="flag-num">Flag 8</span><h3>Mock-up is destructive — sequence with PALS</h3>
-      <p>Step 2b of the Censeo scope requires existing flooring to be removed so the mock-up sits directly on the exposed subfloor. In Unit 606 that means abatement needs to be clean and the subfloor fully exposed before Censeo's Part 1 visit.*</p>
-      <p><strong>Action:*</strong> Target the mock-up visit inside PALS's clean-subfloor window so Censeo doesn't have to remobilize. Keep at least a few days of schedule buffer between the abatement clearance and the Part 1 test.</p>
-      <div class="rule">Source: Censeo P26035 §2b / PALS scope sequencing</div>
-      <div class="related"><a href="audio_testing_rules.html#sec9">↗ Acoustic Testing Rules · What Censeo Needs From Unit 606</a></div>
-    </div>
-
     <!-- FLAG 9 -->
     <div class="flag" id="flag9">
+      <span class="owner-chip chip-hoa">You / HOA</span>
       <span class="flag-num">Flag 9</span><h3>Signed owner-to-Board agreement (new installation)</h3>
       <p>For new installations the policy requires the owner to sign a separate agreement with the Board covering the installation time period, the owner's agreement to facilitate post-install testing, and the Board's right to remove a non-compliant floor and assess costs.</p>
       <blockquote>
@@ -444,8 +505,25 @@
       <div class="related"><a href="audio_testing_rules.html#sec6">↗ Acoustic Testing Rules · Pre-Installation Requirements (owner agreement)</a></div>
     </div>
 
+    <!-- GROUP D: Your scheduling / coordination -->
+    <div class="group-heading group-d" id="group-sched">
+      <h2>D · Your Scheduling &amp; Coordination</h2>
+      <div class="g-sub">Moving-parts items you manage across Censeo, PALS, CWD, and Unit 506.</div>
+    </div>
+
+    <!-- FLAG 8 -->
+    <div class="flag" id="flag8">
+      <span class="owner-chip chip-sched">You / Sched</span>
+      <span class="flag-num">Flag 8</span><h3>Mock-up is destructive — sequence with PALS</h3>
+      <p>Step 2b of the Censeo scope requires existing flooring to be removed so the mock-up sits directly on the exposed subfloor. In Unit 606 that means abatement needs to be clean and the subfloor fully exposed before Censeo's Part 1 visit.*</p>
+      <p><strong>Action:*</strong> Target the mock-up visit inside PALS's clean-subfloor window so Censeo doesn't have to remobilize. Keep at least a few days of schedule buffer between the abatement clearance and the Part 1 test.</p>
+      <div class="rule">Source: Censeo P26035 §2b / PALS scope sequencing</div>
+      <div class="related"><a href="audio_testing_rules.html#sec9">↗ Acoustic Testing Rules · What Censeo Needs From Unit 606</a></div>
+    </div>
+
     <!-- FLAG 10 -->
     <div class="flag" id="flag10">
+      <span class="owner-chip chip-sched">You / Sched</span>
       <span class="flag-num">Flag 10</span><h3>90-day proposal expiration</h3>
       <p>The lump-sum pricing is honored for 90 days from the proposal date. Dated <strong>April 20, 2026</strong>, so the pricing is locked through <strong>~July 19, 2026</strong>. Any slip past mid-July and Censeo reserves the right to re-price.</p>
       <div class="rule">Source: Censeo P26035 Expiration clause</div>
@@ -456,37 +534,4 @@
       <h2>ACC Application Timeline (working backward)</h2>
       <p>Below is a rough working-backward timeline anchored to when flooring install is expected to begin. Dates are illustrative — slide them to whatever day work actually starts.*</p>
       <div class="timeline">
-        <div class="t-row"><div class="t-when">D-minus-45</div><div class="t-what">File the <strong>ACC Application (BOD 19-1107)</strong> with CWD, including drawings/specs as applicable, Certificate of Insurance naming Continental House as additional insured, and required deposits.</div></div>
-        <div class="t-row"><div class="t-when">D-minus-30</div><div class="t-what">Attend the <strong>construction governance orientation</strong> with the Board or CWD designee. Any outside architectural / legal / engineering review billed separately as needed.</div></div>
-        <div class="t-row"><div class="t-when">D-minus-21</div><div class="t-what">Confirm written permission from <strong>Unit 506</strong> to host testing. Post-receipt, give Censeo and Unit 506 the two proposed test dates (mock-up + post-install).</div></div>
-        <div class="t-row"><div class="t-when">D-minus-14</div><div class="t-what">PALS asbestos abatement complete; subfloor exposed and cleared for mock-up.* Schedule <strong>Censeo Part 1 (mock-up)</strong>.</div></div>
-        <div class="t-row"><div class="t-when">D-0</div><div class="t-what">Install start. Facility Manager posts public notice on bulletin board, master calendar, and to neighboring units per ACC §6.</div></div>
-        <div class="t-row"><div class="t-when">Post-install</div><div class="t-what">Schedule <strong>Censeo Part 2 (post-install test)</strong> within the 90-day fee window. Submit test report to Board via CWD. On pass, Association refunds the HSFP deposit.</div></div>
-      </div>
-    </div>
-
-    <!-- MONEY SUMMARY -->
-    <div class="section" id="money">
-      <h2>Estimated Out-of-Pocket Summary (Testing + HOA only)</h2>
-      <p>This is the testing-and-HOA layer only — separate from PALS and any flooring-install costs.</p>
-      <table class="money">
-        <tr><th>Item</th><th>Payee</th><th style="text-align:right;">Amount</th></tr>
-        <tr><td>Censeo Part 1 — Mock-up AIIC/FIIC test</td><td>Censeo</td><td class="amt">$2,150</td></tr>
-        <tr><td>Censeo Part 2 — Post-install test</td><td>Censeo</td><td class="amt">$1,760</td></tr>
-        <tr><td>HSFP Deposit (150% × $3,910; refundable on pass)</td><td>Association</td><td class="amt">$5,865</td></tr>
-        <tr><td>ACC Damage &amp; Cleaning Deposit (refundable)</td><td>Association</td><td class="amt">$1,000</td></tr>
-        <tr><td>ACC Project Review Fee</td><td>CWD / Board</td><td class="amt">$350</td></tr>
-        <tr><td>ACC Common-Area Fee ($25/day × duration)</td><td>Association</td><td class="amt">varies</td></tr>
-        <tr class="total"><td colspan="2">Up-front cash required (refunds follow on successful pass)</td><td class="amt">~$11,125</td></tr>
-        <tr class="total"><td colspan="2">Net non-refundable if everything passes</td><td class="amt">~$4,260 + daily</td></tr>
-      </table>
-      <p class="legend">*Daily common-area fee depends on project duration. Outside architectural / legal / engineering review is not included above and is billed at cost by the Board.</p>
-    </div>
-
-    <!-- WHAT'S OK -->
-    <div class="section" id="ok">
-      <h2>What Lines Up Correctly</h2>
-      <div class="ok">
-        <strong>No gaps here</strong>
-        <ul>
-          <li><strong>Censeo is the Board-approved acoustic consultant</strong> under the Revised Unit Remodel Policy (Requirement 14), so the vendor choice itself is compl
+        <div class="t-row"><div class="t-when">D-minus-45</div><di
