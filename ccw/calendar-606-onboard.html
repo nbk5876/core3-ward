@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  -----------------------------------------
+Filename: calendar-april-may-2026.html
+Version: v1.11
+Date: 4/9/26
+Folder: C:\Users\gb105\OneDrive\Documents\GitHub\core3.com\AI\4012
+Changes: Overflow days (leading/trailing) now show dimmed day
+         numbers and carry data-date so events render in both
+         months. Overflow chips display actual month colors.
+         renderEvents updated to querySelectorAll.
+         Federal holiday added: Memorial Day May 25 (navy blue).
+------------------------------------------------ -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>April & May 2026 Calendar</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: #f5f0eb;
+    padding: 20px;
+    color: #1a1a1a;
+  }
+
+  /* Status bar */
+  .status-bar {
+    max-width: 800px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    flex-wrap: wrap;
+  }
+  .status-bar label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #555;
+    white-space: nowrap;
+  }
+  .status-msg {
+    font-size: 0.82rem;
+    color: #888;
+    flex: 1;
+  }
+  .status-msg.ok  { color: #4a8c4a; font-weight: 600; }
+  .status-msg.err { color: #b03030; font-weight: 600; }
+
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px 30px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .calendar { margin-bottom: 36px; }
+
+  .month-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+  }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 2px solid #1a1a1a;
+    border-left: 2px solid #1a1a1a;
+  }
+
+  .day-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 6px 4px;
+    border-right: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .april .day-header { background: #c1603a; border-right-color: #a84e2c; border-bottom-color: #a84e2c; }
+  .may   .day-header { background: #c89a2e; border-right-color: #b08520; border-bottom-color: #b08520; }
+
+  .cal-cell {
+    border-right: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    min-height: 80px;
+    padding: 6px 8px;
+    vertical-align: top;
+  }
+
+  .cal-cell .date-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #1a1a1a;
+    display: inline-block;
+  }
+  .cal-cell .date-num.today {
+    background: #1a1a1a;
+    color: white;
+    border-radius: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .cal-cell.empty { background: #faf9f7; }
+  .date-num.overflow { color: #bbb; font-weight: 300; }
+
+  .event-list { margin-top: 5px; }
+  .event-chip {
+    display: block;
+    font-size: 0.68rem;
+    line-height: 1.3;
+    margin-top: 3px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    word-break: break-word;
+  }
+  .april .event-chip { background: #fbe8e0; color: #7a3318; border: 2px solid #a84e2c; }
+  .may   .event-chip { background: #fdf3d0; color: #7a5800; border: 2px solid #b08520; }
+  .april a .event-chip { border: 2px solid #1a6b3a; }
+  .may   a .event-chip { border: 2px solid #1a6b3a; }
+  .event-misc {
+    display: block;
+    font-size: 0.62rem;
+    color: #888;
+    margin-top: 1px;
+    padding-left: 5px;
+    font-style: italic;
+    word-break: break-word;
+  }
+
+  .divider { border: none; border-top: 2px dashed #ccc; margin: 4px 0 30px; }
+
+  .btn-row { display: flex; gap: 12px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+
+  .print-btn, .clear-btn {
+    padding: 12px 32px;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .print-btn { background: #1a1a1a; color: white; }
+  .print-btn:hover { background: #444; }
+  .clear-btn { background: #eee; color: #555; }
+  .clear-btn:hover { background: #ddd; }
+
+  /* Questions & Issues section */
+  .qa-section {
+    max-width: 800px;
+    margin: 20px auto 0;
+    background: white;
+    padding: 24px 30px 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .qa-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1a1a1a;
+    letter-spacing: 0.02em;
+  }
+  .qa-list {
+    list-style: none;
+    counter-reset: qa-counter;
+  }
+  .qa-list li {
+    counter-increment: qa-counter;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  .qa-list li .qa-text {
+    flex: 1;
+  }
+  .qa-list li:last-child { border-bottom: none; }
+  .qa-list li::before {
+    content: counter(qa-counter);
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background: #c1603a;
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .qa-list a { color: #c1603a; }
+
+  @media print {
+    .qa-section { box-shadow: none; page-break-inside: avoid; }
+  }
+  @media (max-width: 480px) {
+    .qa-section { padding: 16px; }
+    .qa-title { font-size: 1.1rem; }
+    .qa-list li { font-size: 0.85rem; }
+  }
+    body { background: white; padding: 0; }
+    .status-bar { display: none; }
+    .page { box-shadow: none; padding: 15mm 15mm 10mm; max-width: 100%; }
+    .btn-row { display: none; }
+    .calendar { page-break-inside: avoid; }
+    .cal-cell { min-height: 70px; }
+  }
+
+  @media (max-width: 480px) {
+    .month-title { font-size: 1.6rem; }
+    .cal-cell { min-height: 52px; }
+    .cal-cell .date-num { font-size: 0.95rem; }
+    .day-header { font-size: 0.62rem; }
+    .page { padding: 16px 10px; }
+    .event-chip { font-size: 0.60rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="status-bar">
+  <label>📄 Moving Calendar — 100 Ward St:</label>
+  <span class="status-msg ok" id="statusMsg"></span>
+</div>
+
+<div class="page">
+
+  <!-- APRIL -->
+  <div class="calendar april">
+    <div class="month-title">April 2026</div>
+    <div class="cal-grid">
+      <div class="day-header">Sun</div>
+      <div class="day-header">Mon</div>
+      <div class="day-header">Tue</div>
+      <div class="day-header">Wed</div>
+      <div class="day-header">Thu</div>
+      <div class="day-header">Fri</div>
+      <div class="day-header">Sat</div>
+
+      <div class="cal-cell empty"><span class="date-num overflow">29</span></div>
+      <div class="cal-cell empty"><span class="date-num overflow">30</span></div>
+      <div class="cal-cell empty"><span class="date-num overflow">31</span></div>
+      <div class="cal-cell" data-date="apr-1"><span class="date-num">1</span></div>
+      <div class="cal-cell" data-date="apr-2"><span class="date-num">2</span></div>
+      <div class="cal-cell" data-date="apr-3"><span class="date-num">3</span></div>
+      <div class="cal-cell" data-date="apr-4"><span class="date-num">4</span></div>
+
+      <div class="cal-cell" data-date="apr-5"><span class="date-num">5</span></div>
+      <div class="cal-cell" data-date="apr-6"><span class="date-num">6</span></div>
+      <div class="cal-cell" data-date="apr-7"><span class="date-num">7</span></div>
+      <div class="cal-cell" data-date="apr-8"><span class="date-num">8</span></div>
+      <div class="cal-cell" data-date="apr-9"><span class="date-num">9</span></div>
+      <div class="cal-cell" data-date="apr-10"><span class="date-num">10</span></div>
+      <div class="cal-cell" data-date="apr-11"><span class="date-num">11</span></div>
+
+      <div class="cal-cell" data-date="apr-12"><span class="date-num">12</span></div>
+      <div class="cal-cell" data-date="apr-13"><span class="date-num">13</span></div>
+      <div class="cal-cell" data-date="apr-14"><span class="date-num">14</span></div>
+      <div class="cal-cell" data-date="apr-15"><span class="date-num">15</span></div>
+      <div class="cal-cell" data-date="apr-16"><span class="date-num">16</span></div>
+      <div class="cal-cell" data-date="apr-17"><span class="date-num">17</span></div>
+      <div class="cal-cell" data-date="apr-18"><span class="date-num">18</span></div>
+
+      <div class="cal-cell" data-date="apr-19"><span class="date-num">19</span></div>
+      <div class="cal-cell" data-date="apr-20"><span class="date-num">20</span></div>
+      <div class="cal-cell" data-date="apr-21"><span class="date-num">21</span></div>
+      <div class="cal-cell" data-date="apr-22"><span class="date-num">22</span></div>
+      <div class="cal-cell" data-date="apr-23"><span class="date-num">23</span></div>
+      <div class="cal-cell" data-date="apr-24"><span class="date-num">24</span></div>
+      <div class="cal-cell" data-date="apr-25"><span class="date-num">25</span></div>
+
+      <div class="cal-cell" data-date="apr-26"><span class="date-num">26</span></div>
+      <div class="cal-cell" data-date="apr-27"><span class="date-num">27</span></div>
+      <div class="cal-cell" data-date="apr-28"><span class="date-num">28</span></div>
+      <div class="cal-cell" data-date="apr-29"><span class="date-num">29</span></div>
+      <div class="cal-cell" data-date="apr-30"><span class="date-num">30</span></div>
+      <div class="cal-cell empty" data-date="may-1"><span class="date-num overflow">1</span></div>
+      <div class="cal-cell empty" data-date="may-2"><span class="date-num overflow">2</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MAY -->
+  <div class="calendar may">
+    <div class="month-title">May 2026</div>
+    <div class="cal-grid">
+      <div class="day-header">Sun</div>
+      <div class="day-header">Mon</div>
+      <div class="day-header">Tue</div>
+      <div class="day-header">Wed</div>
+      <div class="day-header">Thu</div>
+      <div class="day-header">Fri</div>
+      <div class="day-header">Sat</div>
+
+      <div class="cal-cell empty" data-date="apr-26"><span class="date-num overflow">26</span></div>
+      <div class="cal-cell empty" data-date="apr-27"><span class="date-num overflow">27</span></div>
+      <div class="cal-cell empty" data-date="apr-28"><span class="date-num overflow">28</span></div>
+      <div class="cal-cell empty" data-date="apr-29"><span class="date-num overflow">29</span></div>
+      <div class="cal-cell empty" data-date="apr-30"><span class="date-num overflow">30</span></div>
+      <div class="cal-cell" data-date="may-1"><span class="date-num">1</span></div>
+      <div class="cal-cell" data-date="may-2"><span class="date-num">2</span></div>
+
+      <div class="cal-cell" data-date="may-3"><span class="date-num">3</span></div>
+      <div class="cal-cell" data-date="may-4"><span class="date-num">4</span></div>
+      <div class="cal-cell" data-date="may-5"><span class="date-num">5</span></div>
+      <div class="cal-cell" data-date="may-6"><span class="date-num">6</span></div>
+      <div class="cal-cell" data-date="may-7"><span class="date-num">7</span></div>
+      <div class="cal-cell" data-date="may-8"><span class="date-num">8</span></div>
+      <div class="cal-cell" data-date="may-9"><span class="date-num">9</span></div>
+
+      <div class="cal-cell" data-date="may-10"><span class="date-num">10</span></div>
+      <div class="cal-cell" data-date="may-11"><span class="date-num">11</span></div>
+      <div class="cal-cell" data-date="may-12"><span class="date-num">12</span></div>
+      <div class="cal-cell" data-date="may-13"><span class="date-num">13</span></div>
+      <div class="cal-cell" data-date="may-14"><span class="date-num">14</span></div>
+      <div class="cal-cell" data-date="may-15"><span class="date-num">15</span></div>
+      <div class="cal-cell" data-date="may-16"><span class="date-num">16</span></div>
+
+      <div class="cal-cell" data-date="may-17"><span class="date-num">17</span></div>
+      <div class="cal-cell" data-date="may-18"><span class="date-num">18</span></div>
+      <div class="cal-cell" data-date="may-19"><span class="date-num">19</span></div>
+      <div class="cal-cell" data-date="may-20"><span class="date-num">20</span></div>
+      <div class="cal-cell" data-date="may-21"><span class="date-num">21</span></div>
+      <div class="cal-cell" data-date="may-22"><span class="date-num">22</span></div>
+      <div class="cal-cell" data-date="may-23"><span class="date-num">23</span></div>
+
+      <div class="cal-cell" data-date="may-24"><span class="date-num">24</span></div>
+      <div class="cal-cell" data-date="may-25"><span class="date-num">25</span></div>
+      <div class="cal-cell" data-date="may-26"><span class="date-num">26</span></div>
+      <div class="cal-cell" data-date="may-27"><span class="date-num">27</span></div>
+      <div class="cal-cell" data-date="may-28"><span class="date-num">28</span></div>
+      <div class="cal-cell" data-date="may-29"><span class="date-num">29</span></div>
+      <div class="cal-cell" data-date="may-30"><span class="date-num">30</span></div>
+
+      <div class="cal-cell" data-date="may-31"><span class="date-num">31</span></div>
+      <div class="cal-cell empty"><span class="date-num overflow">1</span></div>
+      <div class="cal-cell empty"><span class="date-num overflow">2</span></div>
+      <div class="cal-cell empty"><span class="date-num overflow">3</span></div>
+      <div class="cal-cell empty"><span class="date-num overflow">4</span></div>
+      <div class="cal-cell empty"><span class="date-num overflow">5</span></div>
+      <div class="cal-cell empty"><span class="date-num overflow">6</span></div>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="clear-btn" onclick="clearEvents()">✕ Clear Events</button>
+    <button class="print-btn" onclick="window.print()">🖨 Print Calendar</button>
+  </div>
+</div><!-- end .page -->
+
+<!-- ------------------------------ -->
+<!--             Notes              -->
+<!-- ------------------------------ -->
+<div class="qa-section">
+  <div class="qa-title">Notes</div>
+  <ol class="qa-list">
+
+    <li><span class="qa-text">Close on our home sale currently scheduled for April 24th but we have requested to close on April 21st or 22nd</span></li>
+
+    <li><span class="qa-text">Close on the condo currently scheduled for April 28th but we have requested to close on April 23rd or 24th. 
+
+    Abi at Rainier Title says it's okay with escrow but the seller would need to agree and our agent will need to draft an addendum moving the closing date up.
+    </span></li>
+
+
+
+  </ol>
+</div>
+
+
+
+
+<!-- ------------------------------ -->
+<!--      Questions & Issues        -->
+<!-- ------------------------------ -->
+<div class="qa-section">
+  <div class="qa-title">Questions &amp; Issues</div>
+  <ol class="qa-list">
+
+    <li><span class="qa-text">Can we close on April 21st and stay till April 30? Only 3 more days — we would coordinate with the buyers to move stuff in.</span></li>
+
+    <li><span class="qa-text">When can we close on 100 Ward St? On the 23rd or 24th? The 23rd would be ideal.</span></li>
+
+    <li><span class="qa-text">Would the Itens be interested in any of our furniture? We also have a list of indoor furniture via <a href="https://www.core3.com/AI/4012/moving-sale.html">this link</a>. Could you let us know ASAP so we can account for those items and dispose of the rest?</span></li>
+
+    <li><span class="qa-text">When/How do we get confirmation that CH has accepted our pet request?</span></li>
+
+    <li><span class="qa-text">Since we waived the inspection, how do we handle  inspection of kitchen appliances, washer/dryer and the mini-split AC? Do we just test them ourselves before closing? </span></li>
+
+
+  </ol>
+</div>
+
+<script>
+  const MONTH_MAP = {
+    jan:'jan', january:'jan', feb:'feb', february:'feb',
+    mar:'mar', march:'mar', apr:'apr', april:'apr',
+    may:'may', jun:'jun', june:'jun', jul:'jul', july:'jul',
+    aug:'aug', august:'aug', sep:'sep', september:'sep',
+    oct:'oct', october:'oct', nov:'nov', november:'nov',
+    dec:'dec', december:'dec'
+  };
+
+  function parseDate(raw) {
+    raw = (raw || '').trim();
+    if (!raw) return null;
+    // "Apr 7" or "April 7"
+    let m = raw.match(/^([A-Za-z]+)\.?\s+(\d{1,2})/);
+    if (m) {
+      const mo = MONTH_MAP[m[1].toLowerCase()];
+      if (mo) return mo + '-' + parseInt(m[2]);
+    }
+    // Slash: 4/7 or 4/7/2026
+    m = raw.match(/^(\d{1,2})\/(\d{1,2})/);
+    if (m) {
+      const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+      const idx = parseInt(m[1]) - 1;
+      if (idx >= 0 && idx < 12) return months[idx] + '-' + parseInt(m[2]);
+    }
+    // ISO: 2026-04-07
+    m = raw.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+    if (m) {
+      const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+      return months[parseInt(m[2])-1] + '-' + parseInt(m[3]);
+    }
+    return null;
+  }
+
+  function clearEventChips() {
+    document.querySelectorAll('.event-list').forEach(el => el.remove());
+  }
+
+  function clearEvents() {
+    clearEventChips();
+    const s = document.getElementById('statusMsg');
+    s.textContent = 'Events cleared';
+    s.className = 'status-msg';
+  }
+
+  function renderEvents(events) {
+    clearEventChips();
+    const grouped = {};
+    events.forEach(ev => {
+      const key = parseDate(ev.date);
+      if (!key || !ev.desc) return;
+      if (!grouped[key]) grouped[key] = [];
+      grouped[key].push(ev);
+    });
+
+    // Month style tokens for overflow color correction
+    const MONTH_STYLES = {
+      apr: { bg: '#fbe8e0', color: '#7a3318', border: '#a84e2c', linkBorder: '#1a6b3a' },
+      may: { bg: '#fdf3d0', color: '#7a5800', border: '#b08520', linkBorder: '#1a6b3a' }
+    };
+
+    Object.entries(grouped).forEach(([key, evs]) => {
+      const cells = document.querySelectorAll(`.cal-cell[data-date="${key}"]`);
+      if (!cells.length) return;
+      cells.forEach(cell => {
+        const list = document.createElement('div');
+        list.className = 'event-list';
+
+        // Detect overflow: cell's date month differs from the calendar it's inside
+        const cellMonth = key.split('-')[0];
+        const calMonth  = cell.closest('.april') ? 'apr' : 'may';
+        const isOverflow = cellMonth !== calMonth;
+
+        evs.forEach(ev => {
+          const chip = document.createElement('span');
+          chip.className = 'event-chip';
+          chip.textContent = ev.desc;
+
+          // If overflow, apply the actual month's colors inline
+          if (isOverflow) {
+            const st = MONTH_STYLES[cellMonth] || MONTH_STYLES['may'];
+            chip.style.background = st.bg;
+            chip.style.color      = st.color;
+            chip.style.border     = `2px solid ${st.border}`;
+          }
+
+          // Support bgcolor=color in misc field
+          if (ev.misc) {
+            const bgMatch = ev.misc.match(/^bgcolor=([^\s;]+)$/i);
+            if (bgMatch) {
+              chip.style.background = bgMatch[1];
+              chip.style.color = 'white';
+              chip.style.border = 'none';
+            } else {
+              const misc = document.createElement('span');
+              misc.className = 'event-misc';
+              misc.textContent = ev.misc;
+              // Wrap in link if url provided
+              if (ev.url) {
+                const a = document.createElement('a');
+                a.href = ev.url;
+                a.target = '_blank';
+                a.style.textDecoration = 'none';
+                if (isOverflow) { const st = MONTH_STYLES[cellMonth] || MONTH_STYLES['may']; chip.style.border = `2px solid ${st.linkBorder}`; }
+                a.appendChild(chip);
+                list.appendChild(a);
+              } else {
+                list.appendChild(chip);
+              }
+              list.appendChild(misc);
+              return;
+            }
+          }
+          // Wrap in link if url provided
+          if (ev.url) {
+            const a = document.createElement('a');
+            a.href = ev.url;
+            a.target = '_blank';
+            a.style.textDecoration = 'none';
+            if (isOverflow) { const st = MONTH_STYLES[cellMonth] || MONTH_STYLES['may']; chip.style.border = `2px solid ${st.linkBorder}`; }
+            a.appendChild(chip);
+            list.appendChild(a);
+          } else {
+            list.appendChild(chip);
+          }
+        });
+        cell.appendChild(list);
+      }); // end cells.forEach
+    });
+  }
+
+  // -----------------------------------------------
+  // EVENTS — edit this list to add/change events.
+  // Format: {"date": "Mon DD", "desc": "...", "misc": "...", "url": "..."}
+  // To set a custom chip color: "misc": "bgcolor=red"
+  // To make a chip a clickable link: "url": "https://..."
+  // Any CSS color works: red, green, #ff6600, etc.
+  // Federal holidays use: "misc": "bgcolor=#3a5a8c"
+  // -----------------------------------------------
+  const EVENTS = [
+    {"date": "Apr 16",  "desc": "Walk Thru 4012",                    "misc": "bgcolor=green",            "url": ""},
+
+    {"date": "Apr 22", "desc": "Close 4012 1st Ave",                 "misc": "bgcolor=green", "url": ""},
+    {"date": "Apr 22", "desc": "Wire Funds to Ranier Title",                 "misc": "bgcolor=green", "url": ""},
+
+    {"date": "Apr 24", "desc": "Close 100 Ward St",                  "misc": "bgcolor=green", "url": ""},
+
+    {"date": "Apr 27", "desc": "PALs begin floor and asbesto projects",   "misc": "spanid=pals",            "url": ""},
+    {"date": "May 1", "desc": "AirBNB Move-In",                     "misc": "bgcolor=#4472C4",            "url": "https://www.airbnb.com/rooms/813412712090059524?source_impression_id=p3_1775500390_P3Drfo4Y9HaMW6ev"},
+
+    {"date": "May 1", "desc": "4012 Move Out (clutter.com)",         "misc": "bgcolor=green",            "url": ""},
+
+    {"date": "May 12", "desc": "PALs completes floor and asbesto projects",   "misc": "spanid=pals",            "url": ""},
+
+    {"date": "May 15", "desc": "Clutter Movers",                     "misc": "bgcolor=green",            "url": ""},
+
+    {"date": "May 22", "desc": "AirBNB Move-Out",                    "misc": "bgcolor=#4472C4", "url": ""},
+    {"date": "May 22", "desc": "100 Ward Move-in",                   "misc": "bgcolor=green", "url": ""},
+
+
+    // --- Federal Holidays ---
+    {"date": "May 25", "desc": "🇺🇸 Memorial Day",                    "misc": "bgcolor=#3a5a8c", "url": ""}
+  ];
+
+  window.addEventListener('load', () => {
+    renderEvents(EVENTS);
+    const count = EVENTS.filter(e => e.desc).length;
+    document.getElementById('statusMsg').textContent = `✓ ${count} events`;
+
+    // Highlight today's date
+    const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+    const now = new Date();
+    const key = months[now.getMonth()] + '-' + now.getDate();
+    const todayCell = document.querySelector(`.cal-cell[data-date="${key}"]`);
+    if (todayCell) {
+      todayCell.querySelector('.date-num').classList.add('today');
+    }
+  });
+</script>
+</body>
+</html>
