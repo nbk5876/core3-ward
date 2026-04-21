@@ -66,6 +66,18 @@ Changes: Overflow days (leading/trailing) now show dimmed day
 
   .calendar { margin-bottom: 36px; }
 
+  .page-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1a1a1a;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #1a1a1a;
+  }
+
   .month-title {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
@@ -245,6 +257,7 @@ Changes: Overflow days (leading/trailing) now show dimmed day
   }
 
   @media (max-width: 480px) {
+    .page-main-title { font-size: 1.9rem; margin-bottom: 16px; padding-bottom: 8px; }
     .month-title { font-size: 1.6rem; }
     .cal-cell { min-height: 52px; }
     .cal-cell .date-num { font-size: 0.95rem; }
@@ -262,6 +275,8 @@ Changes: Overflow days (leading/trailing) now show dimmed day
 </div>
 
 <div class="page">
+
+  <h1 class="page-main-title">#606 Calendar</h1>
 
   <!-- APRIL -->
   <div class="calendar april">
