@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- -------------------------------------------------------------
+ Page Name: 606_contacts.html
+ Deploy:    core3.com/ward/ccw/606_contacts.html
+ Purpose:   Mobile-friendly viewer for the Unit 606 contact list image
+ Created:   4/22/2026
+-------------------------------------------------------------- -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 606 — Contact List</title>
+  <link rel="icon" type="image/png" href="../../Home/links-fav-icon-55.png">
+  <style>
+    :root {
+      --blue-dark:  #1F3864;
+      --blue-mid:   #2E5FA3;
+      --blue-light: #D6E4F0;
+      --border:     #C8D8E8;
+      --bg:         #F7FAFD;
+      --white:      #ffffff;
+      --muted:      #6B7F99;
+      --max-width:  860px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: #222;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 32px 20px 26px;
+      text-align: center;
+    }
+    .page-header .label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #A8C4E0;
+      margin-bottom: 10px;
+    }
+    .page-header h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      line-height: 1.3;
+    }
+    .page-header .subtitle {
+      font-size: 14px;
+      color: #C0D8F0;
+      margin-top: 8px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 28px 16px 60px;
+    }
+
+    /* ── Image card ── */
+    .image-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--blue-mid);
+      border-radius: 6px;
+      padding: 14px;
+      box-shadow: 0 2px 8px rgba(30,60,120,0.06);
+    }
+    .image-card a {
+      display: block;
+      line-height: 0; /* remove whitespace under inline image */
+    }
+    .image-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+    .caption a {
+      color: var(--blue-mid);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .caption a:hover { text-decoration: underline; }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-block;
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--blue-mid);
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .page-footer {
+      text-align: center;
+      margin-top: 36px;
+      font-size: 11px;
+      color: #aaa;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Phone tweaks ── */
+    @media (max-width: 480px) {
+      .page-header { padding: 24px 16px 20px; }
+      .page-header h1 { font-size: 1.45rem; }
+      .container { padding: 20px 12px 40px; }
+      .image-card { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <div class="label">Unit 606 — Continental House</div>
+    <h1>Contact List</h1>
+    <div class="subtitle">Key contacts for closing, moving, HOA, and building access</div>
+  </header>
+
+  <main class="container">
+    <div class="image-card">
+      <a href="https://www.core3.com/AI/ward/image/ward-606-contact-list.png"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Open full-size contact list image in a new tab">
+        <img src="https://www.core3.com/AI/ward/image/ward-606-contact-list.png"
+             alt="Unit 606 contact list — names, roles, and phone numbers" />
+      </a>
+    </div>
+
+    <p class="caption">
+      Tap the image to open the full-size version in a new tab.<br>
+      <a href="https://www.core3.com/AI/ward/image/ward-606-contact-list.png"
+         target="_blank" rel="noopener noreferrer">Open original PNG →</a>
+    </p>
+
+    <a href="./" class="back-link">← Back to Unit 606 Reference Pages</a>
+  </main>
+
+  <p class="page-footer" id="mod-date"></p>
+  <script>
+    const d = new Date(document.lastModified);
+    document.getElementById('mod-date').textContent =
+      'Updated ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) +
+      ' ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  </script>
+</body>
+</html>
