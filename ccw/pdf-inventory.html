@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Inventory — Unit 606 100 Ward St.</title>
+  <style>
+    :root {
+      --blue-dark:  #1F3864;
+      --blue-mid:   #2E5FA3;
+      --blue-light: #D6E4F0;
+      --border:     #C8D8E8;
+      --bg:         #F7FAFD;
+      --white:      #ffffff;
+      --muted:      #6B7F99;
+      --max-width:  900px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: #222; min-height: 100vh; }
+
+    .page-header { background: var(--blue-dark); color: var(--white); padding: 28px 20px 22px; text-align: center; }
+    .page-header .label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #A8C4E0; margin-bottom: 8px; }
+    .page-header h1 { font-size: 1.6rem; font-weight: bold; line-height: 1.3; }
+    .page-header .subtitle { font-size: 13px; color: #C0D8F0; margin-top: 6px; }
+    .back-link { display: inline-block; margin-top: 10px; font-size: 12px; color: #A8C4E0; text-decoration: underline; }
+
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 30px 20px 60px; }
+
+    .section { margin-bottom: 32px; }
+    .section-title {
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--blue-dark); background: var(--blue-light);
+      border-left: 4px solid var(--blue-mid);
+      padding: 7px 12px; margin-bottom: 10px;
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--white); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+    thead tr { background: var(--blue-dark); color: var(--white); }
+    thead th { padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+    tbody tr:nth-child(odd)  { background: #f4f8fc; }
+    tbody tr:nth-child(even) { background: var(--white); }
+    tbody td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.4; }
+    tbody tr:last-child td { border-bottom: none; }
+    .col-file { font-weight: 600; color: #1a3060; }
+    .col-path { font-size: 11px; color: var(--muted); }
+    .col-note { font-size: 12px; color: #444; }
+
+    .summary-bar { display: flex; flex-wrap: wrap; gap: 12px 24px; background: var(--blue-light); border: 1px solid var(--border); border-radius: 4px; padding: 10px 14px; margin-bottom: 28px; font-size: 13px; color: var(--blue-dark); }
+    .summary-bar strong { font-weight: 700; }
+
+    footer { text-align: center; font-size: 11px; color: #999; padding: 20px; border-top: 1px solid var(--border); margin-top: 8px; }
+
+    @media (max-width: 600px) {
+      table, thead, tbody, tr, th, td { display: block; }
+      thead { display: none; }
+      tbody tr { border: 1px solid var(--border); border-radius: 6px; margin-bottom: 10px; padding: 10px; background: white !important; }
+      tbody td { padding: 3px 0; border: none; }
+      tbody td::before { font-size: 10px; color: var(--muted); display: block; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1px; }
+      td.col-file::before { content: "File"; }
+      td.col-path::before { content: "Location"; }
+      td.col-note::before { content: "Notes"; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="label">Unit 606 · 100 Ward St.</div>
+  <h1>PDF Document Inventory</h1>
+  <div class="subtitle">Updated: 4/26/2026 &nbsp;·&nbsp; 45 files across OneDrive and GitHub</div>
+  <a class="back-link" href="index.html">← Back to Reference Pages</a>
+</div>
+
+<div class="container">
+
+  <div class="summary-bar">
+    <div>Total PDFs: <strong>45</strong></div>
+    <div>HOA / Governing: <strong>6</strong></div>
+    <div>Financial: <strong>5</strong></div>
+    <div>Inspection / Engineering: <strong>6</strong></div>
+    <div>Move-In / Renovation: <strong>6</strong></div>
+    <div>HOA Meetings / Insurance: <strong>3</strong></div>
+    <div>Purchase / Legal: <strong>5</strong></div>
+    <div>Unrelated (tax, 4012): <strong>14</strong></div>
+  </div>
+
+  <!-- HOA / Governing -->
+  <div class="section">
+    <div class="section-title">HOA / Governing Documents</div>
+    <table>
+      <thead><tr><th>File</th><th>Location</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-file">Rules &amp; Regulations.pdf</td>
+          <td class="col-path">OneDrive\Documents\Home Buy 100 Ward St\</td>
+          <td class="col-note">Top-level copy</td>
+        </tr>
+        <tr>
+          <td class="col-file">Rules &amp; Regulations.pdf</td>
+          <td class="col-path">Home Buy 100 Ward St\Mar 14 Docset From Paul\</td>
+          <td class="col-note">From Paul's disclosure package</td>
+        </tr>
+        <tr>
+          <td class="col-file">Bylaws.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note"></td>
+        </tr>
+        <tr>
+          <td class="col-file">Declaration-Amended &amp; Restated.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note"></td>
+        </tr>
+        <tr>
+          <td class="col-file">100_Ward_Rules_Regulations_searchable.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Searchable Docs\</td>
+          <td class="col-note">Searchable / OCR version</td>
+        </tr>
+        <tr>
+          <td class="col-file">Continental-House-Declaration-Searchable.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Searchable Docs\</td>
+          <td class="col-note">Searchable / OCR version</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Financial -->
+  <div class="section">
+    <div class="section-title">Financial / Budget</div>
+    <table>
+      <thead><tr><th>File</th><th>Location</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-file">Annual Financials.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note"></td>
+        </tr>
+        <tr>
+          <td class="col-file">Budget.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note"></td>
+        </tr>
+        <tr>
+          <td class="col-file">Financial Statement.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note"></td>
+        </tr>
+        <tr>
+          <td class="col-file">Reserves Study.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note"></td>
+        </tr>
+        <tr>
+          <td class="col-file">Disclosure Resale Report.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Inspection / Engineering -->
+  <div class="section">
+    <div class="section-title">Inspection / Engineering</div>
+    <table>
+      <thead><tr><th>File</th><th>Location</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-file">Inspection Report.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note">HOA-provided inspection</td>
+        </tr>
+        <tr>
+          <td class="col-file">Yosef Inspection Report.pdf</td>
+          <td class="col-path">Home Buy 100 Ward St\Docs from Yosef\</td>
+          <td class="col-note">Buyer's independent inspection</td>
+        </tr>
+        <tr>
+          <td class="col-file">Greenbusch Group Testing Proposal.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Debbie Angel\Welcome Package\</td>
+          <td class="col-note">IIC acoustic testing proposal</td>
+        </tr>
+        <tr>
+          <td class="col-file">Authorization to Proceed - IIC Testing.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Debbie Angel\Welcome Package\</td>
+          <td class="col-note">Continental House Condos authorization</td>
+        </tr>
+        <tr>
+          <td class="col-file">Censeo P26035 Fee Proposal.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Move In\</td>
+          <td class="col-note">Censeo acoustic testing fee proposal</td>
+        </tr>
+        <tr>
+          <td class="col-file">PALS-Floor-Abatement.pdf</td>
+          <td class="col-path">shr1\100 Ward St\PALS\</td>
+          <td class="col-note">Asbestos abatement scope / proposal</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Move-In / Renovation -->
+  <div class="section">
+    <div class="section-title">Move-In / Renovation Policies</div>
+    <table>
+      <thead><tr><th>File</th><th>Location</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-file">UnitRemodelPolicy-HardSurfacePolicyForContractor.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note"></td>
+        </tr>
+        <tr>
+          <td class="col-file">Hard_Surface_Flooring_Policy.pdf</td>
+          <td class="col-path">shr1\100 Ward St\</td>
+          <td class="col-note">HOA hard surface flooring rules</td>
+        </tr>
+        <tr>
+          <td class="col-file">Renovation_Scheduling_Application.pdf</td>
+          <td class="col-path">shr1\100 Ward St\</td>
+          <td class="col-note">Form to schedule renovation work</td>
+        </tr>
+        <tr>
+          <td class="col-file">CWD Moving Agreement Form.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Move In\</td>
+          <td class="col-note">CWD Group moving services agreement</td>
+        </tr>
+        <tr>
+          <td class="col-file">CH ACC Application for Unit Modifications_Rev.2018.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Debbie Angel\Welcome Package\</td>
+          <td class="col-note">Architectural control application form</td>
+        </tr>
+        <tr>
+          <td class="col-file">CH Cable-Internet Options.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Debbie Angel\Welcome Package\</td>
+          <td class="col-note">Building cable / internet provider options</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HOA Meetings / Insurance -->
+  <div class="section">
+    <div class="section-title">HOA Meetings / Insurance</div>
+    <table>
+      <thead><tr><th>File</th><th>Location</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-file">Minutes-Last 2 Years.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note">HOA board meeting minutes</td>
+        </tr>
+        <tr>
+          <td class="col-file">Certificate of Insurance.pdf</td>
+          <td class="col-path">Mar 14 Docset From Paul\</td>
+          <td class="col-note">HOA master policy COI</td>
+        </tr>
+        <tr>
+          <td class="col-file">CH RIF 2026.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Teresa Brown\Welcome Package\</td>
+          <td class="col-note">2026 reserve / insurance filing</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Purchase / Legal -->
+  <div class="section">
+    <div class="section-title">Purchase / Legal</div>
+    <table>
+      <thead><tr><th>File</th><th>Location</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-file">Mutual_PSA-100_Ward_St__606.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Purchase Agreement and Title Report\</td>
+          <td class="col-note">Purchase &amp; Sale Agreement</td>
+        </tr>
+        <tr>
+          <td class="col-file">Mutual_PSA-100_Ward_St_606_searchable.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Searchable Docs\</td>
+          <td class="col-note">Searchable / OCR version of PSA</td>
+        </tr>
+        <tr>
+          <td class="col-file">100_Ward_St_606-Sellers_Counter.pdf</td>
+          <td class="col-path">GitHub\core3.com\realestate\100_ward_st\</td>
+          <td class="col-note">Seller's counter-offer</td>
+        </tr>
+        <tr>
+          <td class="col-file">Ben Yosef - Addition to disclosure statement.pdf</td>
+          <td class="col-path">shr1\100 Ward St\Purchase Agreement and Title Report\</td>
+          <td class="col-note"></td>
+        </tr>
+        <tr>
+          <td class="col-file">SAVE CONTINENTAL PLACE.pdf</td>
+          <td class="col-path">Home Buy 100 Ward St\</td>
+          <td class="col-note">Building advocacy / historical document</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Unrelated -->
+  <div class="section">
+    <div class="section-title">Unrelated (Tax Returns, 4012 Property, etc.)</div>
+    <table>
+      <thead><tr><th>File</th><th>Location</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-file">Seatown HVAC Inspection 2025 Invoice #267604.pdf</td>
+          <td class="col-path">shr1\4012 Receipts\</td>
+          <td class="col-note">4012 property</td>
+        </tr>
+        <tr>
+          <td class="col-file">4012 1st Ave Attic Crew Invoice 10-10-25.pdf</td>
+          <td class="col-path">shr1\4012 Receipts\</td>
+          <td class="col-note">4012 property</td>
+        </tr>
+        <tr>
+          <td class="col-file">Seatown Hydro Jetting Invoice #295843.pdf</td>
+          <td class="col-path">shr1\4012 Receipts\</td>
+          <td class="col-note">4012 property</td>
+        </tr>
+        <tr>
+          <td class="col-file">4012 1st Ave NW - Iten Offer on 4012 1st Ave NW.pdf</td>
+          <td class="col-path">shr1\4012 Closing Docs\</td>
+          <td class="col-note">4012 property sale offer</td>
+        </tr>
+        <tr>
+          <td class="col-file">seller disclosure statement w form 17.pdf</td>
+          <td class="col-path">shr1\4012 Paul Stuff\</td>
+          <td class="col-note">4012 property</td>
+        </tr>
+        <tr>
+          <td class="col-file">UnitRemodelPolicy-HardSurfacePolicyForContractor Irene Scan.pdf</td>
+          <td class="col-path">shr1\4012 Paul Stuff\</td>
+          <td class="col-note">4012 property</td>
+        </tr>
+        <tr>
+          <td class="col-file">Statement of Work - 1040 Individual Tax.pdf</td>
+          <td class="col-path">shr1\Eide Bailly Tonys Review\</td>
+          <td class="col-note">Tax / Eide Bailly</td>
+        </tr>
+        <tr>
+          <td class="col-file">Form 7216 - Foreign Disclosure Consent.pdf</td>
+          <td class="col-path">shr1\Eide Bailly Tonys Review\</td>
+          <td class="col-note">Tax / Eide Bailly</td>
+        </tr>
+        <tr>
+          <td class="col-file">Statement of Work - 1040 Amended Individual Tax.pdf</td>
+          <td class="col-path">shr1\Eide Bailly Tonys Review\</td>
+          <td class="col-note">Tax / Eide Bailly</td>
+        </tr>
+        <tr>
+          <td class="col-file">Master Services Agreement.pdf</td>
+          <td class="col-path">shr1\Eide Bailly Tonys Review\</td>
+          <td class="col-note">Tax / Eide Bailly</td>
+        </tr>
+        <tr>
+          <td class="col-file">TaxStatement_2026.pdf</td>
+          <td class="col-path">shr1\From Tony\2026 Tax Docs\</td>
+          <td class="col-note">Tax</td>
+        </tr>
+        <tr>
+          <td class="col-file">Merrill Lynch Multiple_Statements_Download.pdf</td>
+          <td class="col-path">shr1\From Tony\2026 Tax Docs\</td>
+          <td class="col-note">Tax / investment</td>
+        </tr>
+        <tr>
+          <td class="col-file">TIAA Tax Form Dist Code 7 2025.pdf</td>
+          <td class="col-path">shr1\From Tony\2026 Tax Docs\</td>
+          <td class="col-note">Tax</td>
+        </tr>
+        <tr>
+          <td class="col-file">TIAA Trust Form 1099 5901 - 2025.pdf</td>
+          <td class="col-path">shr1\From Tony\2026 Tax Docs\</td>
+          <td class="col-note">Tax</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<footer>606 100 Ward St. · PDF Document Inventory · Generated 4/26/2026</footer>
+</body>
+</html>
